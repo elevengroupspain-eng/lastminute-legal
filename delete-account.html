@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Delete Your Account</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #202124;
+    --ink-soft: #3c4043;
+    --ink-faint: #5f6368;
+    --bg: #f8f9fa;
+    --surface: #ffffff;
+    --line: #dadce0;
+    --line-soft: #e8eaed;
+    --blue: #1a73e8;
+    --blue-hover: #1765cc;
+    --blue-tint: #e8f0fe;
+    --red: #d93025;
+    --red-tint: #fce8e6;
+    --shadow-1: 0 1px 2px 0 rgba(60,64,67,0.30), 0 1px 3px 1px rgba(60,64,67,0.15);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ink: #e8eaed; --ink-soft: #d2d5da; --ink-faint: #9aa0a6;
+      --bg: #131314; --surface: #1e1f20; --line: #3c4043; --line-soft: #303134;
+      --blue: #8ab4f8; --blue-hover: #aecbfa; --blue-tint: #28303f;
+      --red: #f28b82; --red-tint: #3a2626;
+      --shadow-1: 0 1px 2px 0 rgba(0,0,0,0.5), 0 1px 3px 1px rgba(0,0,0,0.3);
+    }
+  }
+  :root[data-theme="dark"] {
+    --ink: #e8eaed; --ink-soft: #d2d5da; --ink-faint: #9aa0a6;
+    --bg: #131314; --surface: #1e1f20; --line: #3c4043; --line-soft: #303134;
+    --blue: #8ab4f8; --blue-hover: #aecbfa; --blue-tint: #28303f;
+    --red: #f28b82; --red-tint: #3a2626;
+    --shadow-1: 0 1px 2px 0 rgba(0,0,0,0.5), 0 1px 3px 1px rgba(0,0,0,0.3);
+  }
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Google Sans Text", Roboto, -apple-system, "Segoe UI", Arial, sans-serif;
+    padding-inline: 16px;
+    padding-block: 32px;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 640px; margin: 0 auto; }
+  .appbar { display: flex; align-items: center; gap: 12px; margin-bottom: 28px; }
+  .mark {
+    width: 36px; height: 36px; border-radius: 10px; background: var(--blue);
+    display: flex; align-items: center; justify-content: center; flex: none;
+  }
+  .mark svg { width: 20px; height: 20px; }
+  .appbar-title { font-family: "Google Sans", Roboto, sans-serif; font-size: 20px; font-weight: 500; }
+  .appbar-title span { color: var(--ink-faint); font-weight: 400; }
+  .eyebrow {
+    font-family: "Google Sans", Roboto, sans-serif; font-size: 12px; font-weight: 500;
+    letter-spacing: 0.3px; text-transform: uppercase; color: var(--blue); margin: 0 0 8px;
+  }
+  h1 { font-family: "Google Sans", Roboto, sans-serif; font-size: clamp(24px, 5.5vw, 30px); font-weight: 400; margin: 0 0 10px; text-wrap: balance; }
+  .lede { font-size: 14.5px; line-height: 1.6; color: var(--ink-soft); margin: 0 0 28px; }
+  .card { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 22px 24px; margin-bottom: 16px; }
+  h2 { font-family: "Google Sans", Roboto, sans-serif; font-size: 16px; font-weight: 500; margin: 0 0 10px; }
+  p, li { font-size: 14px; line-height: 1.7; color: var(--ink-soft); }
+  p { margin: 0 0 10px; }
+  p:last-child { margin-bottom: 0; }
+  ol { margin: 0; padding-left: 20px; }
+  li { margin-bottom: 8px; }
+  li:last-child { margin-bottom: 0; }
+  .callout {
+    background: var(--blue-tint); border-radius: 8px; padding: 14px 16px; font-size: 13px;
+    color: var(--ink); line-height: 1.6; margin-top: 14px;
+  }
+  .retained { background: var(--red-tint); border-radius: 8px; padding: 14px 16px; font-size: 13px; color: var(--ink); line-height: 1.6; }
+  .contact {
+    background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 20px 24px;
+    display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-top: 16px;
+  }
+  .contact h2 { margin: 0 0 4px; }
+  .contact p { color: var(--ink-soft); font-size: 13.5px; margin: 0; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px; background: var(--blue); color: #fff;
+    font-family: "Google Sans", Roboto, sans-serif; font-size: 14px; font-weight: 500;
+    padding: 10px 20px; border-radius: 20px; text-decoration: none; box-shadow: var(--shadow-1); white-space: nowrap;
+  }
+  .btn:hover { background: var(--blue-hover); }
+  footer { margin-top: 24px; padding: 16px 4px 4px; font-size: 12px; color: var(--ink-faint); line-height: 1.6; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="appbar">
+    <div class="mark">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 2L3 7v6c0 5.2 3.8 9.9 9 11 5.2-1.1 9-5.8 9-11V7l-9-5z" fill="#fff" fill-opacity="0.95"/>
+        <path d="M9.5 12l2 2 4-4" stroke="#1a73e8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <div class="appbar-title">Last-Minute Jobs <span>· Account deletion</span></div>
+  </div>
+
+  <p class="eyebrow">Delete your account</p>
+  <h1>Request account and data deletion</h1>
+  <p class="lede">You can delete your Last-Minute Jobs account and its associated data at any time, whether or not you still have the app installed.</p>
+
+  <div class="card">
+    <h2>How to request deletion</h2>
+    <ol>
+      <li>Email us from the address associated with your Last-Minute Jobs account</li>
+      <li>Let us know you'd like your account and data deleted</li>
+      <li>We'll confirm your identity and process the request</li>
+    </ol>
+    <div class="callout">This works whether or not you still have the app installed.</div>
+  </div>
+
+  <div class="card">
+    <h2>What gets deleted</h2>
+    <p>Requesting deletion removes your profile, account credentials, saved preferences, and any photos, videos, or voice notes you've uploaded.</p>
+    <div class="retained">Some information tied to completed jobs — payment records, transaction history, and messages exchanged as part of a job — may be retained for a limited period afterward where needed for legal, tax, fraud-prevention, or dispute-resolution purposes, consistent with our Privacy Policy. This data is not used for any other purpose once your account is deleted.</div>
+  </div>
+
+  <div class="contact">
+    <div>
+      <h2>Need help?</h2>
+      <p>Email us to request deletion or ask a question.</p>
+    </div>
+    <a class="btn" href="mailto:elevengroupspain@gmail.com">Contact us</a>
+  </div>
+
+  <footer>Last-Minute Jobs · See our <a href="https://claude.ai/artifact/AMFKPF9Eej6yofj9BoerXf" style="color:var(--blue)">Privacy Policy</a> for full details on how we handle your data.</footer>
+</div>
+</body>
+</html>
