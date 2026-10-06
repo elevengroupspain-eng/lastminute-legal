@@ -3,11 +3,157 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Last-Minute Jobs Legal</title>
-<meta http-equiv="refresh" content="0; url=privacy.html">
-<link rel="canonical" href="privacy.html">
+<title>Last-Minute Jobs</title>
+<meta name="description" content="Last-Minute Jobs connects people who need a task done now with someone nearby who can do it. Post a job, someone accepts, the money is held securely until the job is done.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1b1a17;
+    --ink-soft: #3d3a33;
+    --ink-faint: #746c5e;
+    --bg: #f7f5f0;
+    --surface: #ffffff;
+    --line: #e4dfd3;
+    --accent: #a8601f;
+    --accent-bg: #f6e6cf;
+    --phone: #1b1a17;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ink: #f1ede4;
+      --ink-soft: #d8d2c4;
+      --ink-faint: #a29a88;
+      --bg: #17160f;
+      --surface: #211f17;
+      --line: #38352a;
+      --accent: #e8a95a;
+      --accent-bg: #3a2c18;
+      --phone: #0b0b08;
+    }
+  }
+  :root[data-theme="dark"] {
+    --ink: #f1ede4;
+    --ink-soft: #d8d2c4;
+    --ink-faint: #a29a88;
+    --bg: #17160f;
+    --surface: #211f17;
+    --line: #38352a;
+    --accent: #e8a95a;
+    --accent-bg: #3a2c18;
+    --phone: #0b0b08;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: Roboto, -apple-system, "Segoe UI", Arial, sans-serif;
+    line-height: 1.55;
+    padding-inline: 16px;
+    padding-block: 40px 56px;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 880px; margin: 0 auto; }
+  .brand { font-weight: 700; letter-spacing: -0.2px; font-size: 18px; color: var(--accent); margin: 0 0 28px; }
+  h1 { font-size: clamp(30px, 6vw, 44px); line-height: 1.12; letter-spacing: -0.5px; margin: 0 0 14px; text-wrap: balance; max-width: 20ch; }
+  .lead { font-size: 18px; color: var(--ink-soft); margin: 0 0 24px; max-width: 60ch; }
+  h2 { font-size: 22px; margin: 56px 0 12px; letter-spacing: -0.2px; }
+  p { margin: 0 0 12px; max-width: 65ch; color: var(--ink-soft); }
+  ol, ul { margin: 0 0 12px; padding-left: 22px; color: var(--ink-soft); max-width: 65ch; }
+  li { margin-bottom: 8px; }
+
+  .shots { display: grid; grid-template-columns: 1fr; gap: 48px; margin-top: 32px; }
+  .shot { display: grid; grid-template-columns: minmax(0, 260px) minmax(0, 1fr); gap: 32px; align-items: center; }
+  .shot:nth-child(even) { grid-template-columns: minmax(0, 1fr) minmax(0, 260px); }
+  .shot:nth-child(even) .phone { order: 2; }
+  .phone {
+    background: var(--phone);
+    border-radius: 36px;
+    padding: 9px;
+    box-shadow: 0 18px 40px -18px rgba(27,26,23,.45);
+    max-width: 260px;
+    width: 100%;
+  }
+  .phone img { display: block; width: 100%; height: auto; border-radius: 28px; }
+  .shot h3 { font-size: 20px; margin: 0 0 8px; letter-spacing: -0.2px; }
+  .shot p { margin: 0 0 8px; }
+  @media (max-width: 640px) {
+    .shot, .shot:nth-child(even) { grid-template-columns: 1fr; justify-items: center; gap: 20px; }
+    .shot:nth-child(even) .phone { order: 0; }
+    .shot .text { width: 100%; }
+  }
+
+  .fees { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 16px 20px; max-width: 65ch; }
+  .fees p:last-child { margin-bottom: 0; }
+  a { color: var(--accent); }
+  footer { margin-top: 56px; padding-top: 20px; border-top: 1px solid var(--line); font-size: 14px; color: var(--ink-faint); }
+  footer p { color: var(--ink-faint); }
+</style>
 </head>
 <body>
-<p>Redirecting to <a href="privacy.html">Privacy Policy &amp; Terms of Service</a>…</p>
+<div class="wrap">
+  <p class="brand">Last-Minute Jobs</p>
+  <h1>Need something done today? Someone nearby can do it.</h1>
+  <p class="lead">Last-Minute Jobs is a mobile app that connects people who need a task done at short notice with people nearby who are free to do it. It is a marketplace: we introduce the two sides and handle the payment, and the worker does the job.</p>
+
+  <h2>See how it works</h2>
+  <div class="shots">
+    <section class="shot">
+      <div class="phone"><img src="shots/map.jpg" alt="Nearby jobs shown as pins on a map, with category filters and job cards at the bottom" width="560" height="1157"></div>
+      <div class="text">
+        <h3>Find jobs on the map</h3>
+        <p>Workers see open jobs around them as pins on a map. Filters narrow the view by category, such as errands, pet care, moving help, cleaning or plumbing. Tap a card to see the price, the distance and the details.</p>
+      </div>
+    </section>
+    <section class="shot">
+      <div class="phone"><img src="shots/list.jpg" alt="A list of open jobs with price, distance, poster rating and an Accept button" width="560" height="1157"></div>
+      <div class="text">
+        <h3>Or browse the list</h3>
+        <p>Each job shows the price, how far away it is, how long until it expires, and the poster's rating. One tap on <strong>Accept</strong> and the job is yours.</p>
+      </div>
+    </section>
+    <section class="shot">
+      <div class="phone"><img src="shots/post.jpg" alt="The Post a job form with quick-fill templates, a description field and a category picker" width="560" height="1157"></div>
+      <div class="text">
+        <h3>Post a job in under a minute</h3>
+        <p>Pick a quick template or describe what you need, choose a category and set the price and the place. A payment method is required before posting, so a worker knows the job is real.</p>
+      </div>
+    </section>
+    <section class="shot">
+      <div class="phone"><img src="shots/settings.jpg" alt="Settings screen showing skills, qualifications, identity verification, availability and payment options" width="560" height="1157"></div>
+      <div class="text">
+        <h3>Build trust with a profile</h3>
+        <p>Workers choose their skills, describe their qualifications and experience, and can verify their identity with an ID photo. Qualifications are shown to the people who hire them and are marked as provided by the worker.</p>
+      </div>
+    </section>
+  </div>
+
+  <h2>How a job goes</h2>
+  <ol>
+    <li><strong>Post.</strong> Describe the task, set the price and pin the location.</li>
+    <li><strong>Accept.</strong> Someone nearby accepts. You can see their rating and the jobs they have completed, and you can message them in the app.</li>
+    <li><strong>Do the job.</strong> The worker goes to the place and does the task.</li>
+    <li><strong>Payment is released.</strong> When the job is marked complete, the money is released to the worker. Both sides then rate each other.</li>
+  </ol>
+
+  <h2>How payment works</h2>
+  <p>Payments are processed by Stripe. When a worker accepts a job, the agreed amount is held on the poster's card. It is not paid out until the job is done. If the worker does not arrive within a reasonable time, the poster can cancel and the held amount is refunded.</p>
+  <div class="fees">
+    <p><strong>Our fee:</strong> a platform fee of 15% of the job price, with a minimum amount, is deducted from the worker's payout. The fee is shown in the app before a job is posted or accepted. There is no charge for browsing or posting.</p>
+  </div>
+
+  <h2>Refunds and disputes</h2>
+  <p>If something goes wrong, either side can open a dispute in the app. We review the messages, photos and timestamps from both people and may refund, release or split the payment as we judge fair. Cancellation rules, including late cancellations and no-shows, are shown in the app before you confirm. Full details are in our <a href="privacy.html">Terms of Service</a>.</p>
+
+  <h2>Contact</h2>
+  <p>Questions, refunds or account help: <a href="mailto:elevengroupspain@gmail.com">elevengroupspain@gmail.com</a></p>
+
+  <footer>
+    <p><a href="privacy.html">Privacy Policy &amp; Terms of Service</a> &nbsp;·&nbsp; <a href="delete-account.html">Delete your account</a></p>
+    <p>Last-Minute Jobs is operated independently and is not affiliated with any other business, brand or app.</p>
+  </footer>
+</div>
 </body>
 </html>
