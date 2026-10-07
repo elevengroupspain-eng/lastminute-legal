@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Last-Minute Jobs Aviso legal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #202124;
+    --ink-soft: #3c4043;
+    --ink-faint: #5f6368;
+    --bg: #f8f9fa;
+    --surface: #ffffff;
+    --line: #dadce0;
+    --line-soft: #e8eaed;
+    --blue: #1a73e8;
+    --blue-hover: #1765cc;
+    --blue-tint: #e8f0fe;
+    --red: #d93025;
+    --red-tint: #fce8e6;
+    --shadow-1: 0 1px 2px 0 rgba(60,64,67,0.30), 0 1px 3px 1px rgba(60,64,67,0.15);
+    --shadow-2: 0 1px 2px 0 rgba(60,64,67,0.30), 0 2px 6px 2px rgba(60,64,67,0.15);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ink: #e8eaed;
+      --ink-soft: #d2d5da;
+      --ink-faint: #9aa0a6;
+      --bg: #131314;
+      --surface: #1e1f20;
+      --line: #3c4043;
+      --line-soft: #303134;
+      --blue: #8ab4f8;
+      --blue-hover: #aecbfa;
+      --blue-tint: #28303f;
+      --red: #f28b82;
+      --red-tint: #3a2626;
+      --shadow-1: 0 1px 2px 0 rgba(0,0,0,0.5), 0 1px 3px 1px rgba(0,0,0,0.3);
+      --shadow-2: 0 1px 2px 0 rgba(0,0,0,0.5), 0 2px 6px 2px rgba(0,0,0,0.3);
+    }
+  }
+  :root[data-theme="dark"] {
+    --ink: #e8eaed;
+    --ink-soft: #d2d5da;
+    --ink-faint: #9aa0a6;
+    --bg: #131314;
+    --surface: #1e1f20;
+    --line: #3c4043;
+    --line-soft: #303134;
+    --blue: #8ab4f8;
+    --blue-hover: #aecbfa;
+    --blue-tint: #28303f;
+    --red: #f28b82;
+    --red-tint: #3a2626;
+    --shadow-1: 0 1px 2px 0 rgba(0,0,0,0.5), 0 1px 3px 1px rgba(0,0,0,0.3);
+    --shadow-2: 0 1px 2px 0 rgba(0,0,0,0.5), 0 2px 6px 2px rgba(0,0,0,0.3);
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Google Sans Text", Roboto, -apple-system, "Segoe UI", Arial, sans-serif;
+    padding-inline: 16px;
+    padding-block: 32px;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 720px; margin: 0 auto; }
+
+  /* Header bar, Google-product style */
+  .appbar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+  .mark {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    background: var(--blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: none;
+  }
+  .mark svg { width: 20px; height: 20px; }
+  .appbar-title {
+    font-family: "Google Sans", Roboto, sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: -0.1px;
+  }
+  .appbar-title span { color: var(--ink-faint); font-weight: 400; }
+
+  /* Tabs, Material-style underline tabs */
+  .tabs {
+    display: flex;
+    gap: 4px;
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 28px;
+  }
+  .tab {
+    appearance: none;
+    border: none;
+    background: transparent;
+    color: var(--ink-faint);
+    font-family: "Google Sans", Roboto, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.1px;
+    padding: 14px 20px 12px;
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -1px;
+    transition: color .15s ease, border-color .15s ease, background .15s ease;
+    border-radius: 8px 8px 0 0;
+  }
+  .tab:hover { background: var(--blue-tint); color: var(--blue); }
+  .tab[aria-selected="true"] {
+    color: var(--blue);
+    border-bottom-color: var(--blue);
+  }
+
+  .eyebrow {
+    font-family: "Google Sans", Roboto, sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+    color: var(--blue);
+    margin: 0 0 8px;
+  }
+  h1 {
+    font-family: "Google Sans", Roboto, sans-serif;
+    font-size: clamp(26px, 5.5vw, 32px);
+    font-weight: 400;
+    letter-spacing: -0.2px;
+    margin: 0 0 6px;
+    text-wrap: balance;
+  }
+  .meta {
+    font-size: 13px;
+    color: var(--ink-faint);
+    margin: 0 0 24px;
+  }
+
+  .summary {
+    background: var(--blue-tint);
+    border-radius: 12px;
+    padding: 18px 20px;
+    margin-bottom: 28px;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+  }
+  .summary svg { flex: none; width: 20px; height: 20px; margin-top: 2px; color: var(--blue); }
+  .summary p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--ink-soft);
+    margin: 0;
+  }
+  .summary strong { color: var(--ink); font-weight: 500; }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 22px 24px;
+    margin-bottom: 16px;
+  }
+  h2 {
+    font-family: "Google Sans", Roboto, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--ink);
+    margin: 0 0 12px;
+    letter-spacing: 0.1px;
+  }
+  p, li {
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--ink-soft);
+  }
+  p { margin: 0 0 10px; }
+  p:last-child, ul:last-child { margin-bottom: 0; }
+  a { color: var(--blue); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+  th, td {
+    text-align: left;
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--line-soft);
+    vertical-align: top;
+  }
+  th {
+    color: var(--ink-faint);
+    font-weight: 500;
+    font-family: "Google Sans", Roboto, sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+  }
+  tr:last-child td { border-bottom: none; }
+  td { color: var(--ink-soft); }
+  .tblwrap { overflow-x: auto; }
+
+  ul { margin: 0 0 10px; padding-left: 18px; }
+  li { margin-bottom: 6px; }
+  li:last-child { margin-bottom: 0; }
+
+  .callout {
+    background: var(--red-tint);
+    border-radius: 8px;
+    padding: 14px 16px;
+    font-size: 13px;
+    color: var(--ink);
+    line-height: 1.6;
+    margin-bottom: 14px;
+    display: flex;
+    gap: 10px;
+  }
+  .callout svg { flex: none; width: 18px; height: 18px; margin-top: 1px; color: var(--red); }
+  .callout:last-child { margin-bottom: 0; }
+  .callout p { margin: 0; color: var(--ink); }
+
+  .contact {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 20px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .contact h2 { margin: 0 0 4px; }
+  .contact p { color: var(--ink-soft); font-size: 13.5px; margin: 0; }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--blue);
+    color: #fff;
+    font-family: "Google Sans", Roboto, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 10px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    box-shadow: var(--shadow-1);
+    white-space: nowrap;
+  }
+  .btn:hover { background: var(--blue-hover); text-decoration: none; box-shadow: var(--shadow-2); }
+
+  footer {
+    margin-top: 28px;
+    padding: 16px 4px 4px;
+    font-size: 12px;
+    line-height: 1.6;
+    color: var(--ink-faint);
+  }
+
+  .langs {
+    font-size: 12px;
+    color: var(--ink-faint);
+    margin: -8px 0 16px;
+  }
+  .langs strong { color: var(--ink); font-weight: 700; }
+  .langs a { color: var(--blue); }
+
+  [hidden] { display: none !important; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="appbar">
+    <div class="mark">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 2L3 7v6c0 5.2 3.8 9.9 9 11 5.2-1.1 9-5.8 9-11V7l-9-5z" fill="#fff" fill-opacity="0.95"/>
+        <path d="M9.5 12l2 2 4-4" stroke="#1a73e8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <div class="appbar-title">Last-Minute Jobs <span>· Aviso legal</span></div>
+  </div>
+
+  <div class="langs" id="langs" aria-label="Idioma">
+    <a href="privacy.html">English</a> · <strong>Español</strong> · <a href="privacy-fr.html">Français</a> · <a href="privacy-nl.html">Nederlands</a> · <a href="privacy-ar.html">العربية</a>
+  </div>
+
+  <div class="tabs" role="tablist">
+    <button class="tab" id="tab-privacy" role="tab" aria-selected="true" aria-controls="panel-privacy">Política de privacidad</button>
+    <button class="tab" id="tab-terms" role="tab" aria-selected="false" aria-controls="panel-terms">Condiciones del servicio</button>
+  </div>
+
+  <!-- ===== PRIVACY ===== -->
+  <div id="panel-privacy" role="tabpanel" aria-labelledby="tab-privacy">
+    <p class="eyebrow">Política de privacidad</p>
+    <h1>Cómo tratamos tus datos</h1>
+    <p class="meta">Fecha de entrada en vigor: 21 de septiembre de 2026</p>
+
+    <div class="summary">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M12 2l8 4v6c0 5.2-3.4 9.4-8 10.5C7.4 21.4 4 17.2 4 12V6l8-4z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9.5 12l2 2 4-4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <p><strong>En resumen:</strong> Last-Minute Jobs es un mercado hiperlocal de tareas. Recopilamos lo necesario para ponerte en contacto con trabajos cercanos, procesar pagos y mantener la seguridad de la plataforma: datos de la cuenta, ubicación aproximada o precisa mientras usas la aplicación, fotos o notas de voz que decidas adjuntar a un trabajo o a un mensaje, e información de pago gestionada por nuestro procesador, Stripe. No vendemos tus datos personales.</p>
+    </div>
+
+    <div class="card">
+      <h2>A quién se aplica</h2>
+      <p>Esta política se aplica a todas las personas que utilizan la aplicación móvil o el sitio web de Last-Minute Jobs («el Servicio»), ya sea para publicar trabajos, aceptarlos o ambas cosas. Last-Minute Jobs se opera de forma independiente y no está vinculada a ninguna otra empresa, marca o aplicación.</p>
+    </div>
+
+    <div class="card">
+      <h2>Qué datos recopilamos</h2>
+      <div class="tblwrap">
+        <table>
+          <tr><th>Categoría</th><th>Qué incluye</th><th>Finalidad</th></tr>
+          <tr>
+            <td>Datos de la cuenta</td>
+            <td>Nombre, correo electrónico, número de teléfono, foto de perfil, inicio de sesión mediante Google o Apple</td>
+            <td>Crear y proteger tu cuenta, e identificarte ante otros usuarios</td>
+          </tr>
+          <tr>
+            <td>Ubicación</td>
+            <td>Ubicación precisa o aproximada mientras la aplicación está en uso; ubicación en segundo plano únicamente mientras te diriges a un trabajo aceptado</td>
+            <td>Mostrar trabajos cercanos, ocultar parcialmente las direcciones exactas hasta que se acepte un trabajo y permitir que quien publica vea que su trabajador va de camino</td>
+          </tr>
+          <tr>
+            <td>Contenido de los trabajos</td>
+            <td>Títulos, descripciones, fotos, vídeos y notas de voz de los trabajos que adjuntes</td>
+            <td>Publicar y completar trabajos, y comunicarse en el chat de un trabajo</td>
+          </tr>
+          <tr>
+            <td>Datos de pago</td>
+            <td>Procesados directamente por Stripe; no almacenamos números completos de tarjeta</td>
+            <td>Cobrar los pagos de los trabajos y abonar los trabajos completados</td>
+          </tr>
+          <tr>
+            <td>Datos de uso y del dispositivo</td>
+            <td>Versión de la aplicación, tipo de dispositivo, registros de fallos y de diagnóstico, token de notificaciones push</td>
+            <td>Operar, proteger y solucionar problemas del Servicio</td>
+          </tr>
+          <tr>
+            <td>Valoraciones y denuncias</td>
+            <td>Valoraciones con estrellas, reseñas escritas y cualquier denuncia que presentes sobre un trabajo</td>
+            <td>Mantener la confianza y la seguridad en todo el mercado</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Cómo los utilizamos</h2>
+      <ul>
+        <li>Poner en contacto trabajos con personas cercanas y mostrar anuncios relevantes en el mapa o en el listado</li>
+        <li>Procesar pagos, comisiones de la plataforma y abonos a través de Stripe</li>
+        <li>Habilitar el chat y las notas de voz entre quien publica un trabajo y quien lo acepta</li>
+        <li>Enviar notificaciones sobre trabajos cercanos, próximos a caducar o actualizados</li>
+        <li>Investigar denuncias, disputas, fraudes e incumplimientos de nuestras Condiciones del servicio</li>
+        <li>Mantener, proteger y mejorar el Servicio, incluso mediante el análisis de patrones de uso agregados o disociados</li>
+        <li>Cumplir las obligaciones legales y hacer valer nuestros acuerdos</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Con quién los compartimos</h2>
+      <ul>
+        <li><strong>La otra parte de un trabajo</strong>: quien publica y quien acepta ven mutuamente su nombre, su valoración y, una vez aceptado el trabajo, una ubicación más precisa durante la duración de dicho trabajo.</li>
+        <li><strong>Stripe</strong>: nuestro procesador de pagos, para gestionar cobros y abonos. La política de privacidad de Stripe rige el tratamiento que esta empresa hace de los datos de pago.</li>
+        <li><strong>Proveedores de servicios</strong>: proveedores de alojamiento, notificaciones push, analítica e incrustación de mapas que ayudan a hacer funcionar la aplicación, obligados contractualmente a utilizar los datos únicamente para prestar ese servicio.</li>
+        <li><strong>Cuestiones legales y de seguridad</strong>: fuerzas y cuerpos de seguridad, autoridades reguladoras u otros terceros cuando consideremos de buena fe que la divulgación es exigida por la ley, es necesaria para proteger los derechos, la propiedad o la seguridad de Last-Minute Jobs, de nuestros usuarios o del público, o es necesaria para investigar un fraude o un incumplimiento de nuestras Condiciones.</li>
+        <li><strong>Transmisiones empresariales</strong>: si Last-Minute Jobs participa en una fusión, adquisición, financiación o venta de activos, la información de los usuarios podrá transferirse como parte de dicha operación, sujeta a las protecciones de confidencialidad habituales.</li>
+      </ul>
+      <p>No vendemos datos personales a cambio de una contraprestación económica.</p>
+    </div>
+
+    <div class="card">
+      <h2>Tus opciones</h2>
+      <ul>
+        <li>Puedes desactivar en cualquier momento los permisos de ubicación, cámara, micrófono y notificaciones en los ajustes de tu dispositivo; algunas funciones (como publicar un trabajo con una foto o ver trabajos cercanos) no funcionarán sin ellos.</li>
+        <li>Puedes editar tu perfil en cualquier momento desde Ajustes en la aplicación.</li>
+        <li>Puedes solicitar una copia o la supresión de tu cuenta y de tus datos poniéndote en contacto con nosotros a través de los datos indicados más abajo, sin perjuicio de nuestro derecho a conservar la información que resulte necesaria por motivos legales, de seguridad, de prevención del fraude o de resolución de disputas.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Conservación de los datos</h2>
+      <p>Conservamos los registros de trabajos, los mensajes y el historial de pagos mientras tu cuenta permanezca activa, y durante un periodo limitado posterior en la medida necesaria para cumplir los requisitos legales, fiscales, de seguridad y de resolución de disputas. Los archivos multimedia adjuntos a un trabajo (fotos, vídeos, notas de voz) se eliminan automáticamente transcurrido un plazo de conservación determinado una vez completado o cancelado el trabajo, salvo que deban conservarse por una disputa o investigación en curso.</p>
+    </div>
+
+    <div class="card">
+      <h2>Seguridad</h2>
+      <div class="callout">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M12 2l8 4v6c0 5.2-3.4 9.4-8 10.5C7.4 21.4 4 17.2 4 12V6l8-4z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 8v5M12 16.5h.01" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        <p>Adoptamos medidas técnicas y organizativas razonables para proteger tu información. Ningún método de transmisión o almacenamiento es seguro al 100 % y no podemos garantizar una seguridad absoluta. Eres responsable de mantener la confidencialidad de las credenciales de tu cuenta.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Privacidad de los menores</h2>
+      <p>Last-Minute Jobs está dirigida a usuarios de 18 años o más. No recopilamos a sabiendas datos de menores de 18 años y los eliminaremos si tenemos conocimiento de ellos.</p>
+    </div>
+
+    <div class="card">
+      <h2>Cambios en esta política</h2>
+      <p>Podemos actualizar esta política en cualquier momento a nuestra entera discreción. Cuando lo hagamos, actualizaremos la fecha de entrada en vigor indicada arriba, y el uso continuado del Servicio tras la entrada en vigor de un cambio supone la aceptación de la política revisada.</p>
+    </div>
+
+    <div class="contact">
+      <div>
+        <h2>¿Tienes preguntas?</h2>
+        <p>Estaremos encantados de ayudarte; escríbenos cuando quieras.</p>
+      </div>
+      <a class="btn" href="mailto:elevengroupspain@gmail.com">Contáctanos</a>
+    </div>
+
+    <footer>Last-Minute Jobs · Esta página es un punto de partida para la redacción, no constituye asesoramiento jurídico y debe ser revisada por un abogado cualificado para tu jurisdicción antes de basarte en ella.<br>En caso de discrepancia, prevalece la versión en inglés.</footer>
+  </div>
+
+  <!-- ===== TERMS ===== -->
+  <div id="panel-terms" role="tabpanel" aria-labelledby="tab-terms" hidden>
+    <p class="eyebrow">Condiciones del servicio</p>
+    <h1>Las normas para usar Last-Minute Jobs</h1>
+    <p class="meta">Fecha de entrada en vigor: 6 de octubre de 2026</p>
+
+    <div class="summary">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M12 2l8 4v6c0 5.2-3.4 9.4-8 10.5C7.4 21.4 4 17.2 4 12V6l8-4z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9.5 12l2 2 4-4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <p><strong>En resumen:</strong> Last-Minute Jobs es un mercado neutral que conecta a las personas que publican tareas con las personas que las realizan. No somos parte en ningún trabajo: no supervisamos, inspeccionamos ni garantizamos el trabajo, a las personas ni el resultado. Utilizas el Servicio, te reúnes con otros usuarios y realizas los trabajos enteramente bajo tu propio riesgo.</p>
+    </div>
+
+    <div class="card">
+      <h2>1. Aceptación de las condiciones</h2>
+      <p>Al crear una cuenta o utilizar Last-Minute Jobs («el Servicio», «nosotros»), aceptas estas Condiciones del servicio y nuestra Política de privacidad. Si no estás de acuerdo, no utilices el Servicio. Debes tener al menos 18 años para utilizar el Servicio.</p>
+    </div>
+
+    <div class="card">
+      <h2>2. Qué es el Servicio (y qué no es)</h2>
+      <p>Last-Minute Jobs es una plataforma tecnológica que permite que un usuario («Publicador») anuncie una tarea y que otro usuario («Trabajador») la acepte y la realice, gestionándose el pago a través de la aplicación. Somos estrictamente un intermediario neutral:</p>
+      <ul>
+        <li>No empleamos, no comprobamos antecedentes, no certificamos, no formamos ni supervisamos a ningún Trabajador ni Publicador.</li>
+        <li>No inspeccionamos los lugares de trabajo, no verificamos las descripciones de los trabajos ni garantizamos la calidad, la legalidad, la seguridad o la finalización de ningún trabajo.</li>
+        <li>El uso del Servicio no crea ninguna relación laboral, de agencia, de sociedad ni de empresa conjunta entre Last-Minute Jobs y ningún usuario, ni entre un Publicador y un Trabajador.</li>
+        <li>Todas las interacciones, acuerdos y encuentros presenciales entre usuarios son exclusivamente entre dichos usuarios.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>3. Asunción de riesgos</h2>
+      <div class="callout">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M12 3l9 16H3l9-16z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 9.5v4M12 16.5h.01" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        <p>Reunirse con un desconocido para realizar o recibir una tarea conlleva riesgos inherentes, incluidos los de daños materiales, lesiones, robo o fraude. Asumes voluntariamente todos esos riesgos. Te recomendamos encarecidamente que, siempre que sea posible, quedes en lugares públicos, verifiques las identidades y uses el sentido común antes de dar acceso a tu vivienda, vehículo o pertenencias.</p>
+      </div>
+      <p>Eres el único responsable de evaluar a otros usuarios y de interactuar con ellos, así como del resultado de cualquier trabajo que publiques o aceptes. Esto incluye verificar cualquier licencia, seguro o cualificación que un trabajo pueda exigir conforme a la legislación local.</p>
+    </div>
+
+    <div class="card">
+      <h2>4. Pagos, comisiones y cancelaciones</h2>
+      <ul>
+        <li>Los pagos los procesa Stripe. Al utilizar el Servicio, aceptas también las condiciones de Stripe aplicables al método de pago que utilices.</li>
+        <li>Last-Minute Jobs cobra una comisión de plataforma (que se muestra antes de publicar o aceptar un trabajo) que se deduce del precio del trabajo.</li>
+        <li>Los precios, las bonificaciones y las tarifas de cancelación los fijan los usuarios, dentro de los límites que muestre la aplicación. No garantizamos ningún ingreso mínimo ni la disponibilidad de trabajos.</li>
+        <li>Las cancelaciones tardías, las ausencias y las finalizaciones discutidas se gestionan conforme al proceso de cancelación y disputa de la aplicación, que podemos actualizar a nuestra discreción. Nuestra decisión sobre una disputa, adoptada de buena fe, es definitiva entre la plataforma y los usuarios en disputa.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>5. Qué cubre el precio: mano de obra, piezas y materiales</h2>
+      <ul>
+        <li>Salvo que un trabajo indique otra cosa, el precio que ofrece un Publicador corresponde únicamente al tiempo y la destreza del Trabajador (mano de obra).</li>
+        <li>Las piezas, materiales, suministros, alquiler de equipos, combustible, aparcamiento, peajes y tasas de eliminación de residuos no están incluidos salvo que la descripción del trabajo así lo indique. La descripción del trabajo debe indicar quién los aporta.</li>
+        <li>Un Trabajador no debe comprar piezas o materiales cuyo reembolso espere recibir salvo que el Publicador haya aprobado de antemano el artículo y el importe en la aplicación o en el chat del trabajo. Conserva el recibo; es posible que se le pida al Trabajador que lo presente.</li>
+        <li>Cuando el Publicador aporte los materiales, será responsable de facilitarlos a tiempo y en condiciones adecuadas.</li>
+        <li>Los costes que no se hayan acordado de antemano no son responsabilidad nuestra, y no garantizamos que vayan a ser reembolsados.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>6. Cambios en un trabajo y tiempo adicional</h2>
+      <ul>
+        <li>La descripción del trabajo, el precio y el tiempo estimado que se muestran cuando se acepta un trabajo constituyen el acuerdo entre el Publicador y el Trabajador.</li>
+        <li>Si el trabajo resulta ser mayor de lo descrito, el Trabajador debe indicarlo antes de continuar. El trabajo adicional, el tiempo adicional o un precio superior deben acordarse entre los dos usuarios antes de que comience el trabajo adicional, preferiblemente en la aplicación.</li>
+        <li>El Trabajador que continúe más allá del alcance o del tiempo acordados sin acuerdo lo hace bajo su propio riesgo. El Publicador que solicite trabajo adicional debe esperar pagar por él.</li>
+        <li>Cualquiera de los usuarios puede rechazar un cambio. Si no logran ponerse de acuerdo, el Trabajador puede detenerse en el alcance acordado y serán de aplicación las normas de cancelación y disputa que figuran más abajo.</li>
+        <li>Los pagos de los extras acordados deben realizarse a través del Servicio. No podemos proteger ni resolver disputas relativas a dinero pagado fuera de él.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>7. Trabajos con licencia y trabajos regulados</h2>
+      <p>Algunos trabajos, como los de gas, electricidad, determinados trabajos de fontanería y construcción, o los que requieren seguro, pueden exigir legalmente una licencia, certificado o permiso. Los Trabajadores deben contar con todas las licencias y cualificaciones que el trabajo requiera y no deben aceptar un trabajo que no estén legalmente autorizados a realizar. Los Publicadores son responsables de elegir a un Trabajador debidamente cualificado para trabajos regulados. No comprobamos licencias ni cualificaciones salvo que la aplicación muestre claramente una insignia de verificación y, aun así, no garantizamos la calidad ni la seguridad del trabajo.</p>
+    </div>
+
+    <div class="card">
+      <h2>8. Cancelaciones, ausencias y finalización</h2>
+      <ul>
+        <li>Un Publicador puede cancelar sin coste un trabajo que no haya sido aceptado.</li>
+        <li>Una vez aceptado un trabajo, una cancelación, una ausencia o un retraso significativo pueden dar lugar a una tarifa o a un reembolso, según se indique en la aplicación. Si un Trabajador ya se ha desplazado o ha comenzado el trabajo, puede aplicarse una tarifa de desplazamiento o de cancelación.</li>
+        <li>Si un Trabajador no llega en un plazo razonable tras la hora de inicio acordada, el Publicador puede cancelar y se le reembolsará el importe retenido para el trabajo.</li>
+        <li>Cuando un Trabajador marca un trabajo como terminado, el Publicador dispone del plazo de confirmación que muestra la aplicación (actualmente 24 horas) para confirmar la finalización o comunicar un problema. El Publicador que comunique un problema debe incluir fotos o detalles. Si el Publicador no realiza ninguna acción, el pago se libera automáticamente al Trabajador.</li>
+        <li>Las disputas se examinan conforme al proceso de disputas de la aplicación, utilizando la información que aporten ambos usuarios, como mensajes, fotos y marcas de tiempo. Podemos reembolsar, liberar o dividir un pago según consideremos justo, y podemos modificar este proceso periódicamente.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>9. Trabajadores independientes e impuestos</h2>
+      <p>Los Trabajadores son personas independientes, no empleados ni agentes de Last-Minute Jobs ni de ningún Publicador. Cada Trabajador es responsable de sus propios impuestos, seguros, licencias y herramientas, de la forma en que se realiza el trabajo y de declarar sus ingresos según exija la ley. Los Publicadores son responsables de la seguridad de sus propias instalaciones y de facilitar datos exactos sobre el trabajo.</p>
+    </div>
+
+    <div class="card">
+      <h2>10. Conductas prohibidas</h2>
+      <p>Te comprometes a no: publicar anuncios de trabajo ilegales, peligrosos o fraudulentos; acosar, amenazar o discriminar a otro usuario; eludir el Servicio para evitar comisiones, incluso solicitando o aceptando el pago de un trabajo fuera de la aplicación; falsear tu identidad, tus cualificaciones o la naturaleza de un trabajo; ni utilizar el Servicio con ninguna finalidad que infrinja la legislación aplicable.</p>
+    </div>
+
+    <div class="card">
+      <h2>11. Exclusión de garantías</h2>
+      <div class="callout">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M12 3l9 16H3l9-16z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 9.5v4M12 16.5h.01" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        <p>EL SERVICIO SE PRESTA «TAL CUAL» Y «SEGÚN DISPONIBILIDAD», SIN GARANTÍAS DE NINGÚN TIPO, EXPRESAS O IMPLÍCITAS, INCLUIDAS LAS GARANTÍAS DE COMERCIABILIDAD, IDONEIDAD PARA UN FIN DETERMINADO, NO INFRACCIÓN, O DE QUE EL SERVICIO SEA ININTERRUMPIDO, SEGURO O ESTÉ LIBRE DE ERRORES. NO GARANTIZAMOS LA CONDUCTA, LA FIABILIDAD NI LA SEGURIDAD DE NINGÚN USUARIO.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>12. Limitación de responsabilidad</h2>
+      <div class="callout">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M12 3l9 16H3l9-16z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 9.5v4M12 16.5h.01" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        <p>EN LA MÁXIMA MEDIDA PERMITIDA POR LA LEY, LAST-MINUTE JOBS Y SUS OPERADORES NO SERÁN RESPONSABLES DE NINGÚN DAÑO INDIRECTO, INCIDENTAL, ESPECIAL, CONSECUENTE O PUNITIVO, NI DE NINGUNA PÉRDIDA DE BENEFICIOS, DATOS O FONDO DE COMERCIO, DERIVADOS DE TU USO DEL SERVICIO, DE CUALQUIER TRABAJO O DE CUALQUIER INTERACCIÓN CON OTRO USUARIO, O RELACIONADOS CON ELLOS —INCLUIDOS LESIONES PERSONALES, DAÑOS MATERIALES O ROBO—, AUNQUE SE NOS HAYA ADVERTIDO DE LA POSIBILIDAD DE DICHOS DAÑOS. NUESTRA RESPONSABILIDAD TOTAL AGREGADA POR CUALQUIER RECLAMACIÓN DERIVADA DEL SERVICIO NO EXCEDERÁ DEL MAYOR DE LOS SIGUIENTES IMPORTES: LAS COMISIONES DE PLATAFORMA QUE HAYAS PAGADO EN LOS TRES MESES ANTERIORES A LA RECLAMACIÓN, O 100 USD.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>13. Indemnización</h2>
+      <p>Te comprometes a indemnizar, defender y mantener indemne a Last-Minute Jobs, a sus operadores y a sus afiliados frente a cualquier reclamación, daño, pérdida o gasto (incluidos los honorarios legales razonables) derivados de tu uso del Servicio, de un trabajo que hayas publicado o aceptado, de tu incumplimiento de estas Condiciones o de tu vulneración de cualquier derecho de otro usuario o de un tercero.</p>
+    </div>
+
+    <div class="card">
+      <h2>14. Suspensión y cierre de la cuenta</h2>
+      <p>Podemos suspender o cancelar tu cuenta a nuestra discreción, con o sin previo aviso, por conductas que consideremos que infringen estas Condiciones, perjudican a otros usuarios o perjudican al Servicio. Puedes dejar de utilizar el Servicio y eliminar tu cuenta en cualquier momento.</p>
+    </div>
+
+    <div class="card">
+      <h2>15. Resolución de controversias</h2>
+      <p>Intentaremos resolver cualquier controversia primero de manera informal; contáctanos a través de los datos indicados más abajo. Cualquier controversia que no pueda resolverse de manera informal se tramitará mediante arbitraje individual o ante un juzgado de reclamaciones de menor cuantía cuando así lo exija o permita la normativa local, y no como parte de una acción colectiva o de representación, en la medida en que ello sea exigible conforme a la legislación aplicable. Nada de lo aquí dispuesto limita los derechos irrenunciables que la legislación local de protección de los consumidores reconozca a un usuario.</p>
+    </div>
+
+    <div class="card">
+      <h2>16. Cambios en estas condiciones</h2>
+      <p>Podemos actualizar estas Condiciones a nuestra discreción. Cuando lo hagamos, actualizaremos la fecha de entrada en vigor indicada arriba; el uso continuado del Servicio tras la entrada en vigor de un cambio supone su aceptación.</p>
+    </div>
+
+    <div class="contact">
+      <div>
+        <h2>¿Tienes preguntas?</h2>
+        <p>Estaremos encantados de ayudarte; escríbenos cuando quieras.</p>
+      </div>
+      <a class="btn" href="mailto:elevengroupspain@gmail.com">Contáctanos</a>
+    </div>
+
+    <footer>Last-Minute Jobs · Esta página es un punto de partida para la redacción, no constituye asesoramiento jurídico y debe ser revisada por un abogado cualificado para tu jurisdicción —en especial en lo relativo a la responsabilidad, la exigibilidad del arbitraje y las normas de protección de los consumidores— antes de basarte en ella.<br>En caso de discrepancia, prevalece la versión en inglés.</footer>
+  </div>
+</div>
+
+<script>
+(function () {
+  var tabs = document.querySelectorAll(".tab");
+  var panels = { privacy: document.getElementById("panel-privacy"), terms: document.getElementById("panel-terms") };
+
+  function select(name) {
+    tabs.forEach(function (t) {
+      var isMatch = t.id === "tab-" + name;
+      t.setAttribute("aria-selected", isMatch ? "true" : "false");
+    });
+    Object.keys(panels).forEach(function (k) {
+      panels[k].hidden = k !== name;
+    });
+    try { history.replaceState(null, "", "#" + name); } catch (e) {}
+  }
+
+  tabs.forEach(function (t) {
+    t.addEventListener("click", function () {
+      select(t.id.replace("tab-", ""));
+    });
+  });
+
+  var initial = (location.hash || "").replace("#", "");
+  select(initial === "terms" ? "terms" : "privacy");
+
+  // Language switcher: carry the current hash to the other language version
+  document.querySelectorAll("#langs a").forEach(function (a) {
+    a.addEventListener("click", function (e) {
+      e.preventDefault();
+      window.location.href = a.getAttribute("href") + (location.hash || "");
+    });
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Last-Minute Jobs — الوثائق القانونية</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500&family=Noto+Sans+Arabic:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #202124;
+    --ink-soft: #3c4043;
+    --ink-faint: #5f6368;
+    --bg: #f8f9fa;
+    --surface: #ffffff;
+    --line: #dadce0;
+    --line-soft: #e8eaed;
+    --blue: #1a73e8;
+    --blue-hover: #1765cc;
+    --blue-tint: #e8f0fe;
+    --red: #d93025;
+    --red-tint: #fce8e6;
+    --shadow-1: 0 1px 2px 0 rgba(60,64,67,0.30), 0 1px 3px 1px rgba(60,64,67,0.15);
+    --shadow-2: 0 1px 2px 0 rgba(60,64,67,0.30), 0 2px 6px 2px rgba(60,64,67,0.15);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ink: #e8eaed;
+      --ink-soft: #d2d5da;
+      --ink-faint: #9aa0a6;
+      --bg: #131314;
+      --surface: #1e1f20;
+      --line: #3c4043;
+      --line-soft: #303134;
+      --blue: #8ab4f8;
+      --blue-hover: #aecbfa;
+      --blue-tint: #28303f;
+      --red: #f28b82;
+      --red-tint: #3a2626;
+      --shadow-1: 0 1px 2px 0 rgba(0,0,0,0.5), 0 1px 3px 1px rgba(0,0,0,0.3);
+      --shadow-2: 0 1px 2px 0 rgba(0,0,0,0.5), 0 2px 6px 2px rgba(0,0,0,0.3);
+    }
+  }
+  :root[data-theme="dark"] {
+    --ink: #e8eaed;
+    --ink-soft: #d2d5da;
+    --ink-faint: #9aa0a6;
+    --bg: #131314;
+    --surface: #1e1f20;
+    --line: #3c4043;
+    --line-soft: #303134;
+    --blue: #8ab4f8;
+    --blue-hover: #aecbfa;
+    --blue-tint: #28303f;
+    --red: #f28b82;
+    --red-tint: #3a2626;
+    --shadow-1: 0 1px 2px 0 rgba(0,0,0,0.5), 0 1px 3px 1px rgba(0,0,0,0.3);
+    --shadow-2: 0 1px 2px 0 rgba(0,0,0,0.5), 0 2px 6px 2px rgba(0,0,0,0.3);
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Noto Sans Arabic", "Google Sans Text", Roboto, -apple-system, "Segoe UI", Tahoma, "Geeza Pro", "Arabic Typesetting", Arial, sans-serif;
+    padding-inline: 16px;
+    padding-block: 32px;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 720px; margin: 0 auto; }
+
+  /* Header bar, Google-product style */
+  .appbar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+  .mark {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    background: var(--blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: none;
+  }
+  .mark svg { width: 20px; height: 20px; }
+  .appbar-title {
+    font-family: "Noto Sans Arabic", "Google Sans", Roboto, Tahoma, "Geeza Pro", sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: -0.1px;
+  }
+  .appbar-title span { color: var(--ink-faint); font-weight: 400; }
+
+  /* Tabs, Material-style underline tabs */
+  .tabs {
+    display: flex;
+    gap: 4px;
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 28px;
+  }
+  .tab {
+    appearance: none;
+    border: none;
+    background: transparent;
+    color: var(--ink-faint);
+    font-family: "Noto Sans Arabic", "Google Sans", Roboto, Tahoma, "Geeza Pro", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.1px;
+    padding: 14px 20px 12px;
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -1px;
+    transition: color .15s ease, border-color .15s ease, background .15s ease;
+    border-radius: 8px 8px 0 0;
+  }
+  .tab:hover { background: var(--blue-tint); color: var(--blue); }
+  .tab[aria-selected="true"] {
+    color: var(--blue);
+    border-bottom-color: var(--blue);
+  }
+
+  .eyebrow {
+    font-family: "Noto Sans Arabic", "Google Sans", Roboto, Tahoma, "Geeza Pro", sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+    color: var(--blue);
+    margin: 0 0 8px;
+  }
+  h1 {
+    font-family: "Noto Sans Arabic", "Google Sans", Roboto, Tahoma, "Geeza Pro", sans-serif;
+    font-size: clamp(26px, 5.5vw, 32px);
+    font-weight: 400;
+    letter-spacing: -0.2px;
+    margin: 0 0 6px;
+    text-wrap: balance;
+  }
+  .meta {
+    font-size: 13px;
+    color: var(--ink-faint);
+    margin: 0 0 24px;
+  }
+
+  .summary {
+    background: var(--blue-tint);
+    border-radius: 12px;
+    padding: 18px 20px;
+    margin-bottom: 28px;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+  }
+  .summary svg { flex: none; width: 20px; height: 20px; margin-top: 2px; color: var(--blue); }
+  .summary p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--ink-soft);
+    margin: 0;
+  }
+  .summary strong { color: var(--ink); font-weight: 500; }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 22px 24px;
+    margin-bottom: 16px;
+  }
+  h2 {
+    font-family: "Noto Sans Arabic", "Google Sans", Roboto, Tahoma, "Geeza Pro", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--ink);
+    margin: 0 0 12px;
+    letter-spacing: 0.1px;
+  }
+  p, li {
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--ink-soft);
+  }
+  p { margin: 0 0 10px; }
+  p:last-child, ul:last-child { margin-bottom: 0; }
+  a { color: var(--blue); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+  th, td {
+    text-align: right;
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--line-soft);
+    vertical-align: top;
+  }
+  th {
+    color: var(--ink-faint);
+    font-weight: 500;
+    font-family: "Noto Sans Arabic", "Google Sans", Roboto, Tahoma, "Geeza Pro", sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+  }
+  tr:last-child td { border-bottom: none; }
+  td { color: var(--ink-soft); }
+  .tblwrap { overflow-x: auto; }
+
+  ul { margin: 0 0 10px; padding-right: 18px; padding-left: 0; }
+  li { margin-bottom: 6px; }
+  li:last-child { margin-bottom: 0; }
+
+  .callout {
+    background: var(--red-tint);
+    border-radius: 8px;
+    padding: 14px 16px;
+    font-size: 13px;
+    color: var(--ink);
+    line-height: 1.6;
+    margin-bottom: 14px;
+    display: flex;
+    gap: 10px;
+  }
+  .callout svg { flex: none; width: 18px; height: 18px; margin-top: 1px; color: var(--red); }
+  .callout:last-child { margin-bottom: 0; }
+  .callout p { margin: 0; color: var(--ink); }
+
+  .contact {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 20px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .contact h2 { margin: 0 0 4px; }
+  .contact p { color: var(--ink-soft); font-size: 13.5px; margin: 0; }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--blue);
+    color: #fff;
+    font-family: "Noto Sans Arabic", "Google Sans", Roboto, Tahoma, "Geeza Pro", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 10px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    box-shadow: var(--shadow-1);
+    white-space: nowrap;
+  }
+  .btn:hover { background: var(--blue-hover); text-decoration: none; box-shadow: var(--shadow-2); }
+
+  footer {
+    margin-top: 28px;
+    padding: 16px 4px 4px;
+    font-size: 12px;
+    line-height: 1.6;
+    color: var(--ink-faint);
+  }
+
+  /* Arabic: no letter-spacing (breaks joining), no uppercase, comfortable line height */
+  .eyebrow, th, .tab, h1, h2, .btn, .appbar-title { letter-spacing: 0 !important; text-transform: none !important; }
+  p, li { line-height: 1.85; }
+  .summary p, .callout { line-height: 1.8; }
+  .tabs { justify-content: flex-start; }
+
+  /* Language switcher */
+  .langs {
+    font-size: 12px;
+    color: var(--ink-faint);
+    margin: -8px 0 16px;
+    line-height: 1.6;
+  }
+  .langs a { color: var(--blue); }
+  .langs b { color: var(--ink); font-weight: 700; }
+  .langs .sep { margin: 0 6px; color: var(--line); }
+
+  [hidden] { display: none !important; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="appbar">
+    <div class="mark">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 2L3 7v6c0 5.2 3.8 9.9 9 11 5.2-1.1 9-5.8 9-11V7l-9-5z" fill="#fff" fill-opacity="0.95"/>
+        <path d="M9.5 12l2 2 4-4" stroke="#1a73e8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <div class="appbar-title">Last-Minute Jobs <span>· الشؤون القانونية</span></div>
+  </div>
+
+  <div class="langs" lang="en" dir="ltr" id="langs">
+    <a href="privacy.html">English</a><span class="sep">·</span><a href="privacy-es.html" lang="es">Español</a><span class="sep">·</span><a href="privacy-fr.html" lang="fr">Français</a><span class="sep">·</span><a href="privacy-nl.html" lang="nl">Nederlands</a><span class="sep">·</span><b lang="ar" aria-current="true">العربية</b>
+  </div>
+
+  <div class="tabs" role="tablist">
+    <button class="tab" id="tab-privacy" role="tab" aria-selected="true" aria-controls="panel-privacy">سياسة الخصوصية</button>
+    <button class="tab" id="tab-terms" role="tab" aria-selected="false" aria-controls="panel-terms">شروط الخدمة</button>
+  </div>
+
+  <!-- ===== PRIVACY ===== -->
+  <div id="panel-privacy" role="tabpanel" aria-labelledby="tab-privacy">
+    <p class="eyebrow">سياسة الخصوصية</p>
+    <h1>كيف نتعامل مع بياناتك</h1>
+    <p class="meta">تاريخ السريان: 21 سبتمبر 2026</p>
+
+    <div class="summary">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M12 2l8 4v6c0 5.2-3.4 9.4-8 10.5C7.4 21.4 4 17.2 4 12V6l8-4z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9.5 12l2 2 4-4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <p><strong>باختصار:</strong> Last-Minute Jobs هو سوق للمهام المحلية فائقة القرب. نجمع ما يلزم لمطابقتك مع الوظائف القريبة منك، ومعالجة المدفوعات، والحفاظ على أمان المنصة، وهو يشمل: بيانات الحساب، والموقع التقريبي أو الدقيق أثناء استخدام التطبيق، والصور أو المذكرات الصوتية التي تختار إرفاقها بوظيفة أو رسالة، وبيانات الدفع التي يعالجها مزوّد خدمة الدفع لدينا، Stripe. نحن لا نبيع بياناتك الشخصية.</p>
+    </div>
+
+    <div class="card">
+      <h2>من تشمل هذه السياسة</h2>
+      <p>تسري هذه السياسة على كل من يستخدم تطبيق Last-Minute Jobs للجوال أو موقعه الإلكتروني ("الخدمة")، سواء كان ينشر الوظائف أو يقبلها أو يفعل الأمرين معًا. يُدار Last-Minute Jobs بصورة مستقلة، وهو غير تابع لأي نشاط تجاري أو علامة تجارية أو تطبيق آخر.</p>
+    </div>
+
+    <div class="card">
+      <h2>ما الذي نجمعه</h2>
+      <div class="tblwrap">
+        <table>
+          <tr><th>الفئة</th><th>ما تشمله</th><th>السبب</th></tr>
+          <tr>
+            <td>معلومات الحساب</td>
+            <td>الاسم، والبريد الإلكتروني، ورقم الهاتف، وصورة الملف الشخصي، وتسجيل الدخول عبر Google أو Apple</td>
+            <td>لإنشاء حسابك وتأمينه، والتعريف بك لدى المستخدمين الآخرين</td>
+          </tr>
+          <tr>
+            <td>الموقع</td>
+            <td>الموقع الدقيق أو التقريبي أثناء استخدام التطبيق؛ والموقع في الخلفية فقط أثناء التوجّه الفعلي إلى وظيفة تم قبولها</td>
+            <td>لعرض الوظائف القريبة، وإخفاء العناوين الدقيقة (تمويهها) إلى أن تُقبل الوظيفة، وتمكين ناشر الوظيفة من معرفة أن العامل في طريقه إليه</td>
+          </tr>
+          <tr>
+            <td>محتوى الوظائف</td>
+            <td>عناوين الوظائف وأوصافها، والصور ومقاطع الفيديو والمذكرات الصوتية التي ترفقها</td>
+            <td>لنشر الوظائف وإنجازها، والتواصل في محادثة الوظيفة</td>
+          </tr>
+          <tr>
+            <td>بيانات الدفع</td>
+            <td>تعالجها Stripe مباشرةً — ولا نخزّن أرقام البطاقات كاملة</td>
+            <td>لتحصيل مدفوعات الوظائف وصرف مستحقات الأعمال المنجزة</td>
+          </tr>
+          <tr>
+            <td>بيانات الاستخدام والجهاز</td>
+            <td>إصدار التطبيق، ونوع الجهاز، وسجلات الأعطال والتشخيص، ورمز الإشعارات الفورية</td>
+            <td>لتشغيل الخدمة وتأمينها واستكشاف أعطالها وإصلاحها</td>
+          </tr>
+          <tr>
+            <td>التقييمات والبلاغات</td>
+            <td>تقييمات النجوم، والمراجعات المكتوبة، وأي بلاغات تقدّمها بشأن وظيفة</td>
+            <td>للحفاظ على الثقة والسلامة في السوق</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>كيف نستخدمها</h2>
+      <ul>
+        <li>مطابقة الوظائف مع الأشخاص القريبين، وعرض القوائم ذات الصلة على الخريطة أو في الموجز</li>
+        <li>معالجة المدفوعات ورسوم المنصة وعمليات الصرف عبر Stripe</li>
+        <li>تمكين المحادثة والمذكرات الصوتية بين ناشر الوظيفة ومن يقبلها</li>
+        <li>إرسال إشعارات بشأن الوظائف القريبة أو التي توشك على الانتهاء أو التي جرى تحديثها</li>
+        <li>التحقيق في البلاغات والنزاعات والاحتيال ومخالفات شروط الخدمة الخاصة بنا</li>
+        <li>صيانة الخدمة وتأمينها وتحسينها، بما في ذلك عن طريق تحليل أنماط الاستخدام المجمّعة أو منزوعة الهوية</li>
+        <li>الامتثال للالتزامات القانونية وإنفاذ اتفاقياتنا</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>الجهات التي نشاركها معها</h2>
+      <ul>
+        <li><strong>الطرف الآخر في الوظيفة</strong> — يرى ناشر الوظيفة ومن يقبلها اسم كلٍّ منهما وتقييمه، كما يريان موقعًا أدق بعد قبول الوظيفة طوال مدتها.</li>
+        <li><strong>Stripe</strong> — مزوّد خدمة الدفع لدينا، لمعالجة عمليات التحصيل والصرف. وتحكم سياسة الخصوصية الخاصة بـ Stripe طريقة تعاملها مع بيانات الدفع.</li>
+        <li><strong>مزوّدو الخدمات</strong> — مزوّدو الاستضافة والإشعارات الفورية والتحليلات وتضمين الخرائط الذين يساعدون في تشغيل التطبيق، وهم ملزمون تعاقديًا باستخدام البيانات فقط لتقديم تلك الخدمة.</li>
+        <li><strong>الأمور القانونية والسلامة</strong> — جهات إنفاذ القانون أو الجهات الرقابية أو أطراف ثالثة أخرى، متى اعتقدنا بحسن نية أن الإفصاح مطلوب بموجب القانون، أو لازم لحماية حقوق Last-Minute Jobs أو مستخدمينا أو الجمهور أو ممتلكاتهم أو سلامتهم، أو ضروري للتحقيق في احتيال أو في مخالفة لشروطنا.</li>
+        <li><strong>نقل الأعمال</strong> — إذا كان Last-Minute Jobs طرفًا في اندماج أو استحواذ أو تمويل أو بيع أصول، فقد تُنقل معلومات المستخدمين ضمن تلك الصفقة، مع مراعاة ضمانات السرية المعتادة.</li>
+      </ul>
+      <p>نحن لا نبيع البيانات الشخصية مقابل عوض مالي.</p>
+    </div>
+
+    <div class="card">
+      <h2>خياراتك</h2>
+      <ul>
+        <li>يمكنك إيقاف أذونات الموقع والكاميرا والميكروفون والإشعارات في أي وقت من إعدادات جهازك — وبعض الميزات (مثل نشر وظيفة مصحوبة بصورة، أو رؤية الوظائف القريبة) لن تعمل بدونها.</li>
+        <li>يمكنك تعديل ملفك الشخصي في أي وقت من الإعدادات داخل التطبيق.</li>
+        <li>يمكنك طلب نسخة من حسابك وبياناتك أو حذفهما عبر التواصل معنا بالبيانات الواردة أدناه، مع احتفاظنا بالحق في الإبقاء على المعلومات بالقدر اللازم لأغراض قانونية أو أمنية أو لمنع الاحتيال أو لتسوية النزاعات.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>الاحتفاظ بالبيانات</h2>
+      <p>نحتفظ بسجلات الوظائف والرسائل وسجل المدفوعات طوال مدة نشاط حسابك، ولفترة محدودة بعد ذلك بالقدر اللازم للوفاء بالمتطلبات القانونية والضريبية والأمنية ومتطلبات تسوية النزاعات. وتُحذف الوسائط المرفقة بوظيفة (الصور ومقاطع الفيديو والمذكرات الصوتية) تلقائيًا بعد مدة احتفاظ محددة من اكتمال الوظيفة أو إلغائها، إلا إذا كان الاحتفاظ بها لازمًا بسبب نزاع قائم أو تحقيق جارٍ.</p>
+    </div>
+
+    <div class="card">
+      <h2>الأمان</h2>
+      <div class="callout">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M12 2l8 4v6c0 5.2-3.4 9.4-8 10.5C7.4 21.4 4 17.2 4 12V6l8-4z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 8v5M12 16.5h.01" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        <p>نتخذ تدابير تقنية وتنظيمية معقولة لحماية معلوماتك. ولا توجد وسيلة نقل أو تخزين آمنة بنسبة 100%، ولا يمكننا ضمان الأمان المطلق. وأنت مسؤول عن الحفاظ على سرية بيانات اعتماد حسابك.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>خصوصية الأطفال</h2>
+      <p>إن Last-Minute Jobs مخصص للمستخدمين الذين تبلغ أعمارهم 18 عامًا فأكثر. ولا نجمع عن علم بيانات من أي شخص دون 18 عامًا، وسنحذف تلك البيانات إذا علمنا بوجودها.</p>
+    </div>
+
+    <div class="card">
+      <h2>التغييرات على هذه السياسة</h2>
+      <p>يجوز لنا تحديث هذه السياسة من وقت لآخر وفق تقديرنا المنفرد. وسنحدّث تاريخ السريان الوارد أعلاه عند ذلك، ويُعدّ استمرارك في استخدام الخدمة بعد سريان أي تغيير قبولًا للسياسة المعدّلة.</p>
+    </div>
+
+    <div class="contact">
+      <div>
+        <h2>هل لديك أسئلة؟</h2>
+        <p>يسعدنا مساعدتك — تواصل معنا في أي وقت.</p>
+      </div>
+      <a class="btn" href="mailto:elevengroupspain@gmail.com">تواصل معنا</a>
+    </div>
+
+    <footer>Last-Minute Jobs · هذه الصفحة مسوّدة أولية للاسترشاد بها وليست مشورة قانونية، وينبغي أن يراجعها محامٍ مؤهل في نطاق اختصاصك القضائي قبل الاعتماد عليها.<br>في حال وجود أي اختلاف، تسود النسخة الإنجليزية.</footer>
+  </div>
+
+  <!-- ===== TERMS ===== -->
+  <div id="panel-terms" role="tabpanel" aria-labelledby="tab-terms" hidden>
+    <p class="eyebrow">شروط الخدمة</p>
+    <h1>قواعد استخدام Last-Minute Jobs</h1>
+    <p class="meta">تاريخ السريان: 6 أكتوبر 2026</p>
+
+    <div class="summary">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M12 2l8 4v6c0 5.2-3.4 9.4-8 10.5C7.4 21.4 4 17.2 4 12V6l8-4z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9.5 12l2 2 4-4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <p><strong>باختصار:</strong> Last-Minute Jobs سوق محايد يربط بين من ينشرون المهام ومن ينجزونها. ولسنا طرفًا في أي وظيفة — فنحن لا نشرف على العمل أو الأشخاص أو النتيجة ولا نعاينها ولا نضمنها. وأنت تستخدم الخدمة وتلتقي بالمستخدمين الآخرين وتنجز الوظائف على مسؤوليتك الخاصة بالكامل.</p>
+    </div>
+
+    <div class="card">
+      <h2>1. قبول الشروط</h2>
+      <p>بإنشائك حسابًا أو باستخدامك Last-Minute Jobs ("الخدمة" و"نحن" و"لنا")، فإنك توافق على شروط الخدمة هذه وعلى سياسة الخصوصية الخاصة بنا. وإذا كنت لا توافق، فلا تستخدم الخدمة. ويجب ألا يقل عمرك عن 18 عامًا لاستخدام الخدمة.</p>
+    </div>
+
+    <div class="card">
+      <h2>2. ماهية الخدمة (وما ليست عليه)</h2>
+      <p>Last-Minute Jobs منصة تقنية تتيح لمستخدم ("الناشر") إدراج مهمة، ولمستخدم آخر ("العامل") قبولها وتنفيذها، مع معالجة الدفع عبر التطبيق. ونحن وسيط محايد حصرًا:</p>
+      <ul>
+        <li>نحن لا نوظّف أي عامل أو ناشر، ولا نجري فحصًا للسوابق بحقه، ولا نعتمده، ولا ندرّبه، ولا نشرف عليه.</li>
+        <li>نحن لا نعاين مواقع العمل، ولا نتحقق من أوصاف الوظائف، ولا نضمن جودة أي وظيفة أو مشروعيتها أو سلامتها أو إتمامها.</li>
+        <li>لا ينشأ باستخدام الخدمة أي علاقة عمل أو وكالة أو شراكة أو مشروع مشترك بين Last-Minute Jobs وأي مستخدم، ولا بين الناشر والعامل.</li>
+        <li>جميع التعاملات والترتيبات واللقاءات الشخصية بين المستخدمين تقتصر على أولئك المستخدمين وحدهم.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>3. تحمّل المخاطر</h2>
+      <div class="callout">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M12 3l9 16H3l9-16z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 9.5v4M12 16.5h.01" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        <p>ينطوي لقاء شخص غريب لتنفيذ مهمة أو تلقّيها على مخاطر كامنة، منها خطر تلف الممتلكات أو الإصابة أو السرقة أو الاحتيال. وأنت تتحمل جميع هذه المخاطر طوعًا. ونوصي بشدة بالالتقاء في الأماكن العامة متى أمكن، والتحقق من الهويات، والتحلي بالحكمة قبل السماح لأي شخص بدخول منزلك أو مركبتك أو الوصول إلى متعلقاتك.</p>
+      </div>
+      <p>أنت وحدك المسؤول عن تقييم المستخدمين الآخرين والتعامل معهم، وعن نتيجة أي وظيفة تنشرها أو تقبلها. ويشمل ذلك التحقق من أي ترخيص أو تأمين أو مؤهل قد تتطلبه الوظيفة بموجب القانون المحلي.</p>
+    </div>
+
+    <div class="card">
+      <h2>4. المدفوعات والرسوم والإلغاءات</h2>
+      <ul>
+        <li>تُعالَج المدفوعات عبر Stripe. وباستخدامك الخدمة فإنك توافق أيضًا على شروط Stripe التي تحكم وسيلة الدفع التي تستخدمها.</li>
+        <li>يفرض Last-Minute Jobs رسم منصة (يُعرض قبل نشر الوظيفة أو قبولها) يُخصم من سعر الوظيفة.</li>
+        <li>يحدّد المستخدمون الأسعار والمكافآت ورسوم الإلغاء، ضمن أي حدود يعرضها التطبيق. ونحن لا نضمن أي حد أدنى من الأرباح ولا توافر الوظائف.</li>
+        <li>تُعالَج حالات الإلغاء المتأخر وعدم الحضور وإتمام الوظائف محل النزاع وفق إجراءات الإلغاء وتسوية النزاعات داخل التطبيق، والتي يجوز لنا تحديثها وفق تقديرنا. ويكون قرارنا في أي نزاع، متى صدر بحسن نية، نهائيًا فيما بين المنصة والمستخدمين المتنازعين.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>5. ما يغطيه السعر: العمالة وقطع الغيار والمواد</h2>
+      <ul>
+        <li>ما لم تنص الوظيفة على خلاف ذلك، فإن السعر الذي يعرضه الناشر مقابل وقت العامل ومهارته (العمالة) فقط.</li>
+        <li>لا تشمل الأسعار قطع الغيار والمواد والمستلزمات واستئجار المعدات والوقود ومواقف السيارات ورسوم الطرق ورسوم التخلص من المخلفات ما لم يذكر وصف الوظيفة خلاف ذلك. وينبغي أن يبيّن وصف الوظيفة من يتولى توفيرها.</li>
+        <li>لا يجوز للعامل شراء قطع أو مواد يتوقع استرداد ثمنها ما لم يوافق الناشر مسبقًا على الصنف والمبلغ في التطبيق أو في محادثة الوظيفة. واحتفظ بالإيصال؛ فقد يُطلب من العامل تقديمه.</li>
+        <li>وحيثما يوفر الناشر المواد، فإنه مسؤول عن توفيرها في الوقت المناسب وبحالة ملائمة.</li>
+        <li>التكاليف التي لم يُتفق عليها مسبقًا ليست من مسؤوليتنا، ولا نضمن استردادها.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>6. تغييرات الوظيفة والوقت الإضافي</h2>
+      <ul>
+        <li>يشكّل وصف الوظيفة وسعرها والوقت المقدّر المعروضة عند قبول الوظيفة الاتفاق بين الناشر والعامل.</li>
+        <li>إذا تبيّن أن العمل أكبر مما وُصف، فعلى العامل إبلاغ الناشر بذلك قبل المتابعة. ويجب أن يتفق المستخدمان على أي عمل إضافي أو وقت إضافي أو سعر أعلى قبل بدء العمل الإضافي، ويُفضَّل أن يكون ذلك في التطبيق.</li>
+        <li>ومن يتجاوز من العمال النطاق أو الوقت المتفق عليه دون اتفاق فإنه يفعل ذلك على مسؤوليته الخاصة. وعلى الناشر الذي يطلب عملًا إضافيًا أن يتوقع دفع مقابله.</li>
+        <li>يجوز لأي من المستخدمين رفض التغيير. وإذا تعذّر الاتفاق، يجوز للعامل التوقف عند النطاق المتفق عليه، وتسري قواعد الإلغاء وتسوية النزاعات الواردة أدناه.</li>
+        <li>ينبغي أن تُدفع مبالغ الأعمال الإضافية المتفق عليها عبر الخدمة. ولا يمكننا حماية الأموال المدفوعة خارجها ولا تسوية النزاعات المتعلقة بها.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>7. الأعمال المرخّصة والخاضعة للتنظيم</h2>
+      <p>قد تتطلب بعض الأعمال، مثل أعمال الغاز والكهرباء وبعض أعمال السباكة والبناء، أو الأعمال التي تستلزم تأمينًا، ترخيصًا أو شهادة أو تصريحًا بموجب القانون. ويجب أن يحمل العمال كل ترخيص ومؤهل يتطلبه العمل، وألا يقبلوا وظيفة لا يُسمح لهم قانونًا بتنفيذها. ويتحمل الناشرون مسؤولية اختيار عامل مؤهل بما يكفي للأعمال الخاضعة للتنظيم. ونحن لا نتحقق من التراخيص أو المؤهلات ما لم يعرض التطبيق بوضوح شارة توثيق، وحتى في هذه الحالة لا نضمن جودة العمل أو سلامته.</p>
+    </div>
+
+    <div class="card">
+      <h2>8. الإلغاء وعدم الحضور والإتمام</h2>
+      <ul>
+        <li>يجوز للناشر إلغاء وظيفة لم تُقبل بعد دون أي رسوم.</li>
+        <li>بعد قبول الوظيفة، قد يترتب على الإلغاء أو عدم الحضور أو التأخر الكبير رسم أو استرداد وفق ما يعرضه التطبيق. وإذا كان العامل قد انتقل بالفعل أو بدأ العمل، فقد يُطبَّق رسم انتقال أو إلغاء.</li>
+        <li>إذا لم يصل العامل خلال مدة معقولة بعد موعد البدء المتفق عليه، يجوز للناشر الإلغاء ويُرد إليه المبلغ المحجوز للوظيفة.</li>
+        <li>عندما يضع العامل علامة على الوظيفة بأنها منجزة، تكون أمام الناشر مهلة التأكيد المعروضة في التطبيق (24 ساعة حاليًا) لتأكيد الإتمام أو الإبلاغ عن مشكلة. وعلى الناشر الذي يبلغ عن مشكلة أن يرفق صورًا أو تفاصيل. وإذا لم يتخذ الناشر أي إجراء، يُصرف المبلغ إلى العامل تلقائيًا.</li>
+        <li>تُراجَع النزاعات وفق إجراءات تسوية النزاعات داخل التطبيق اعتمادًا على المعلومات التي يقدمها المستخدمان، مثل الرسائل والصور والتوقيتات. ويجوز لنا رد المبلغ أو صرفه أو تقسيمه بحسب ما نراه عادلًا، ويجوز لنا تغيير هذه الإجراءات من وقت لآخر.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>9. العمال المستقلون والضرائب</h2>
+      <p>العمال أفراد مستقلون، وليسوا موظفين لدى Last-Minute Jobs أو أي ناشر ولا وكلاء عنهما. ويتحمل كل عامل مسؤولية ضرائبه وتأمينه وتراخيصه وأدواته وطريقة أداء العمل، وكذلك الإفصاح عن أي دخل وفق ما يقتضيه القانون. ويتحمل الناشرون مسؤولية سلامة أماكنهم وتقديم تفاصيل دقيقة عن الوظيفة.</p>
+    </div>
+
+    <div class="card">
+      <h2>10. السلوك المحظور</h2>
+      <p>توافق على ألا تقوم بما يلي: نشر قوائم وظائف غير قانونية أو خطرة أو احتيالية؛ أو مضايقة مستخدم آخر أو تهديده أو التمييز ضده؛ أو الالتفاف على الخدمة لتفادي الرسوم، بما في ذلك طلب أو قبول الدفع مقابل وظيفة خارج التطبيق؛ أو تقديم معلومات مضللة عن هويتك أو مؤهلاتك أو طبيعة الوظيفة؛ أو استخدام الخدمة لأي غرض يخالف القانون المعمول به.</p>
+    </div>
+
+    <div class="card">
+      <h2>11. إخلاء المسؤولية عن الضمانات</h2>
+      <div class="callout">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M12 3l9 16H3l9-16z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 9.5v4M12 16.5h.01" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        <p>تُقدَّم الخدمة "كما هي" و"حسب توافرها"، دون أي ضمانات من أي نوع، صريحة كانت أو ضمنية، بما في ذلك ضمانات القابلية للتسويق، والملاءمة لغرض معين، وعدم التعدي على الحقوق، أو أن تكون الخدمة متواصلة أو آمنة أو خالية من الأخطاء. ونحن لا نضمن سلوك أي مستخدم أو موثوقيته أو سلامته.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>12. تحديد المسؤولية</h2>
+      <div class="callout">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M12 3l9 16H3l9-16z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 9.5v4M12 16.5h.01" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        <p>إلى أقصى حد يسمح به القانون، لن يكون Last-Minute Jobs ولا مشغّلوه مسؤولين عن أي أضرار غير مباشرة أو عرضية أو خاصة أو تبعية أو عقابية، ولا عن أي خسارة في الأرباح أو البيانات أو السمعة التجارية، تنشأ عن استخدامك الخدمة أو أي وظيفة أو أي تعامل مع مستخدم آخر أو تتصل بذلك — بما في ذلك الإصابة الشخصية أو تلف الممتلكات أو السرقة — حتى لو أُبلغنا بإمكانية وقوع تلك الأضرار. ولن تتجاوز مسؤوليتنا الإجمالية عن أي مطالبة تنشأ عن الخدمة المبلغ الأكبر من رسوم المنصة التي دفعتها خلال الأشهر الثلاثة السابقة للمطالبة، أو 100 دولار أمريكي.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>13. التعويض</h2>
+      <p>توافق على تعويض Last-Minute Jobs ومشغّليه وشركاته التابعة والدفاع عنهم وإبراء ذمتهم من أي مطالبة أو ضرر أو خسارة أو نفقة (بما في ذلك أتعاب المحاماة المعقولة) تنشأ عن استخدامك الخدمة، أو عن وظيفة نشرتها أو قبلتها، أو عن مخالفتك لهذه الشروط، أو عن انتهاكك أي حق لمستخدم آخر أو لطرف ثالث.</p>
+    </div>
+
+    <div class="card">
+      <h2>14. تعليق الحساب وإنهاؤه</h2>
+      <p>يجوز لنا تعليق حسابك أو إنهاؤه وفق تقديرنا، مع إشعار أو دون إشعار، بسبب سلوك نرى أنه يخالف هذه الشروط أو يضر بالمستخدمين الآخرين أو بالخدمة. ويجوز لك التوقف عن استخدام الخدمة وحذف حسابك في أي وقت.</p>
+    </div>
+
+    <div class="card">
+      <h2>15. تسوية النزاعات</h2>
+      <p>سنسعى أولًا إلى تسوية أي نزاع بصورة ودية — تواصل معنا عبر البيانات الواردة أدناه. وأي نزاع يتعذر حله ودّيًا سيُنظر فيه عن طريق التحكيم الفردي أو محكمة المطالبات الصغيرة حيثما يكون ذلك مطلوبًا أو جائزًا محليًا، وليس في إطار دعوى جماعية أو تمثيلية، وذلك بالقدر الذي يكون نافذًا بموجب القانون المعمول به. ولا يوجد في هذه الشروط ما يحد من الحقوق النظامية غير القابلة للتنازل التي يتمتع بها المستخدم بموجب قانون حماية المستهلك المحلي.</p>
+    </div>
+
+    <div class="card">
+      <h2>16. التغييرات على هذه الشروط</h2>
+      <p>يجوز لنا تحديث هذه الشروط وفق تقديرنا. وسنحدّث تاريخ السريان الوارد أعلاه عند ذلك؛ ويُعدّ استمرارك في استخدام الخدمة بعد سريان أي تغيير قبولًا له.</p>
+    </div>
+
+    <div class="contact">
+      <div>
+        <h2>هل لديك أسئلة؟</h2>
+        <p>يسعدنا مساعدتك — تواصل معنا في أي وقت.</p>
+      </div>
+      <a class="btn" href="mailto:elevengroupspain@gmail.com">تواصل معنا</a>
+    </div>
+
+    <footer>Last-Minute Jobs · هذه الصفحة مسوّدة أولية للاسترشاد بها وليست مشورة قانونية، وينبغي أن يراجعها محامٍ مؤهل في نطاق اختصاصك القضائي — لا سيما فيما يتعلق بالمسؤولية، وقابلية التحكيم للإنفاذ، وقواعد حماية المستهلك — قبل الاعتماد عليها.<br>في حال وجود أي اختلاف، تسود النسخة الإنجليزية.</footer>
+  </div>
+</div>
+
+<script>
+(function () {
+  var tabs = document.querySelectorAll(".tab");
+  var panels = { privacy: document.getElementById("panel-privacy"), terms: document.getElementById("panel-terms") };
+
+  function select(name) {
+    tabs.forEach(function (t) {
+      var isMatch = t.id === "tab-" + name;
+      t.setAttribute("aria-selected", isMatch ? "true" : "false");
+    });
+    Object.keys(panels).forEach(function (k) {
+      panels[k].hidden = k !== name;
+    });
+    try { history.replaceState(null, "", "#" + name); } catch (e) {}
+  }
+
+  tabs.forEach(function (t) {
+    t.addEventListener("click", function () {
+      select(t.id.replace("tab-", ""));
+    });
+  });
+
+  var initial = (location.hash || "").replace("#", "");
+  select(initial === "terms" ? "terms" : "privacy");
+
+  var langLinks = document.querySelectorAll("#langs a");
+  langLinks.forEach(function (a) {
+    a.addEventListener("click", function () {
+      var base = a.getAttribute("href").split("#")[0];
+      a.setAttribute("href", base + (location.hash || ""));
+    });
+  });
+})();
+</script>
+</body>
+</html>

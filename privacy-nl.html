@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Last-Minute Jobs Juridisch</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #202124;
+    --ink-soft: #3c4043;
+    --ink-faint: #5f6368;
+    --bg: #f8f9fa;
+    --surface: #ffffff;
+    --line: #dadce0;
+    --line-soft: #e8eaed;
+    --blue: #1a73e8;
+    --blue-hover: #1765cc;
+    --blue-tint: #e8f0fe;
+    --red: #d93025;
+    --red-tint: #fce8e6;
+    --shadow-1: 0 1px 2px 0 rgba(60,64,67,0.30), 0 1px 3px 1px rgba(60,64,67,0.15);
+    --shadow-2: 0 1px 2px 0 rgba(60,64,67,0.30), 0 2px 6px 2px rgba(60,64,67,0.15);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ink: #e8eaed;
+      --ink-soft: #d2d5da;
+      --ink-faint: #9aa0a6;
+      --bg: #131314;
+      --surface: #1e1f20;
+      --line: #3c4043;
+      --line-soft: #303134;
+      --blue: #8ab4f8;
+      --blue-hover: #aecbfa;
+      --blue-tint: #28303f;
+      --red: #f28b82;
+      --red-tint: #3a2626;
+      --shadow-1: 0 1px 2px 0 rgba(0,0,0,0.5), 0 1px 3px 1px rgba(0,0,0,0.3);
+      --shadow-2: 0 1px 2px 0 rgba(0,0,0,0.5), 0 2px 6px 2px rgba(0,0,0,0.3);
+    }
+  }
+  :root[data-theme="dark"] {
+    --ink: #e8eaed;
+    --ink-soft: #d2d5da;
+    --ink-faint: #9aa0a6;
+    --bg: #131314;
+    --surface: #1e1f20;
+    --line: #3c4043;
+    --line-soft: #303134;
+    --blue: #8ab4f8;
+    --blue-hover: #aecbfa;
+    --blue-tint: #28303f;
+    --red: #f28b82;
+    --red-tint: #3a2626;
+    --shadow-1: 0 1px 2px 0 rgba(0,0,0,0.5), 0 1px 3px 1px rgba(0,0,0,0.3);
+    --shadow-2: 0 1px 2px 0 rgba(0,0,0,0.5), 0 2px 6px 2px rgba(0,0,0,0.3);
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Google Sans Text", Roboto, -apple-system, "Segoe UI", Arial, sans-serif;
+    padding-inline: 16px;
+    padding-block: 32px;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 720px; margin: 0 auto; }
+
+  /* Header bar, Google-product style */
+  .appbar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+  .mark {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    background: var(--blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: none;
+  }
+  .mark svg { width: 20px; height: 20px; }
+  .appbar-title {
+    font-family: "Google Sans", Roboto, sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: -0.1px;
+  }
+  .appbar-title span { color: var(--ink-faint); font-weight: 400; }
+
+  /* Tabs, Material-style underline tabs */
+  .tabs {
+    display: flex;
+    gap: 4px;
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 28px;
+  }
+  .tab {
+    appearance: none;
+    border: none;
+    background: transparent;
+    color: var(--ink-faint);
+    font-family: "Google Sans", Roboto, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.1px;
+    padding: 14px 20px 12px;
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -1px;
+    transition: color .15s ease, border-color .15s ease, background .15s ease;
+    border-radius: 8px 8px 0 0;
+  }
+  .tab:hover { background: var(--blue-tint); color: var(--blue); }
+  .tab[aria-selected="true"] {
+    color: var(--blue);
+    border-bottom-color: var(--blue);
+  }
+
+  .eyebrow {
+    font-family: "Google Sans", Roboto, sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+    color: var(--blue);
+    margin: 0 0 8px;
+  }
+  h1 {
+    font-family: "Google Sans", Roboto, sans-serif;
+    font-size: clamp(26px, 5.5vw, 32px);
+    font-weight: 400;
+    letter-spacing: -0.2px;
+    margin: 0 0 6px;
+    text-wrap: balance;
+  }
+  .meta {
+    font-size: 13px;
+    color: var(--ink-faint);
+    margin: 0 0 24px;
+  }
+
+  .summary {
+    background: var(--blue-tint);
+    border-radius: 12px;
+    padding: 18px 20px;
+    margin-bottom: 28px;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+  }
+  .summary svg { flex: none; width: 20px; height: 20px; margin-top: 2px; color: var(--blue); }
+  .summary p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--ink-soft);
+    margin: 0;
+  }
+  .summary strong { color: var(--ink); font-weight: 500; }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 22px 24px;
+    margin-bottom: 16px;
+  }
+  h2 {
+    font-family: "Google Sans", Roboto, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--ink);
+    margin: 0 0 12px;
+    letter-spacing: 0.1px;
+  }
+  p, li {
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--ink-soft);
+  }
+  p { margin: 0 0 10px; }
+  p:last-child, ul:last-child { margin-bottom: 0; }
+  a { color: var(--blue); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+  th, td {
+    text-align: left;
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--line-soft);
+    vertical-align: top;
+  }
+  th {
+    color: var(--ink-faint);
+    font-weight: 500;
+    font-family: "Google Sans", Roboto, sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+  }
+  tr:last-child td { border-bottom: none; }
+  td { color: var(--ink-soft); }
+  .tblwrap { overflow-x: auto; }
+
+  ul { margin: 0 0 10px; padding-left: 18px; }
+  li { margin-bottom: 6px; }
+  li:last-child { margin-bottom: 0; }
+
+  .callout {
+    background: var(--red-tint);
+    border-radius: 8px;
+    padding: 14px 16px;
+    font-size: 13px;
+    color: var(--ink);
+    line-height: 1.6;
+    margin-bottom: 14px;
+    display: flex;
+    gap: 10px;
+  }
+  .callout svg { flex: none; width: 18px; height: 18px; margin-top: 1px; color: var(--red); }
+  .callout:last-child { margin-bottom: 0; }
+  .callout p { margin: 0; color: var(--ink); }
+
+  .contact {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 20px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .contact h2 { margin: 0 0 4px; }
+  .contact p { color: var(--ink-soft); font-size: 13.5px; margin: 0; }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--blue);
+    color: #fff;
+    font-family: "Google Sans", Roboto, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 10px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    box-shadow: var(--shadow-1);
+    white-space: nowrap;
+  }
+  .btn:hover { background: var(--blue-hover); text-decoration: none; box-shadow: var(--shadow-2); }
+
+  footer {
+    margin-top: 28px;
+    padding: 16px 4px 4px;
+    font-size: 12px;
+    line-height: 1.6;
+    color: var(--ink-faint);
+  }
+
+  [hidden] { display: none !important; }
+
+  /* Language switcher */
+  .lang {
+    font-size: 12px;
+    line-height: 1.6;
+    color: var(--ink-faint);
+    margin: -12px 0 16px;
+  }
+  .lang a { color: var(--blue); }
+  .lang b { color: var(--ink); font-weight: 700; }
+  .lang .sep { padding-inline: 4px; color: var(--line); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="appbar">
+    <div class="mark">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 2L3 7v6c0 5.2 3.8 9.9 9 11 5.2-1.1 9-5.8 9-11V7l-9-5z" fill="#fff" fill-opacity="0.95"/>
+        <path d="M9.5 12l2 2 4-4" stroke="#1a73e8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <div class="appbar-title">Last-Minute Jobs <span>· Juridisch</span></div>
+  </div>
+
+  <div class="lang" id="lang-switch"><a href="privacy.html">English</a><span class="sep">·</span><a href="privacy-es.html">Español</a><span class="sep">·</span><a href="privacy-fr.html">Français</a><span class="sep">·</span><b>Nederlands</b><span class="sep">·</span><a href="privacy-ar.html">العربية</a></div>
+
+  <div class="tabs" role="tablist">
+    <button class="tab" id="tab-privacy" role="tab" aria-selected="true" aria-controls="panel-privacy">Privacybeleid</button>
+    <button class="tab" id="tab-terms" role="tab" aria-selected="false" aria-controls="panel-terms">Gebruiksvoorwaarden</button>
+  </div>
+
+  <!-- ===== PRIVACY ===== -->
+  <div id="panel-privacy" role="tabpanel" aria-labelledby="tab-privacy">
+    <p class="eyebrow">Privacybeleid</p>
+    <h1>Hoe wij met uw gegevens omgaan</h1>
+    <p class="meta">Ingangsdatum: 21 september 2026</p>
+
+    <div class="summary">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M12 2l8 4v6c0 5.2-3.4 9.4-8 10.5C7.4 21.4 4 17.2 4 12V6l8-4z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9.5 12l2 2 4-4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <p><strong>Kort samengevat:</strong> Last-Minute Jobs is een hyperlokaal marktplatform voor klusjes. Wij verzamelen wat nodig is om u te koppelen aan klussen in de buurt, betalingen te verwerken en het platform veilig te houden: accountgegevens, uw bij benadering bepaalde of exacte locatie tijdens het gebruik van de app, foto's of spraakberichten die u zelf aan een klus of bericht toevoegt, en betaalgegevens die worden verwerkt door onze betalingsverwerker, Stripe. Wij verkopen uw persoonsgegevens niet.</p>
+    </div>
+
+    <div class="card">
+      <h2>Voor wie dit geldt</h2>
+      <p>Dit beleid is van toepassing op iedereen die de mobiele app of website van Last-Minute Jobs (“de Dienst”) gebruikt, ongeacht of u klussen plaatst, accepteert of beide doet. Last-Minute Jobs wordt zelfstandig geëxploiteerd en is niet gelieerd aan enig ander bedrijf, merk of enige andere app.</p>
+    </div>
+
+    <div class="card">
+      <h2>Wat wij verzamelen</h2>
+      <div class="tblwrap">
+        <table>
+          <tr><th>Categorie</th><th>Wat het omvat</th><th>Waarom</th></tr>
+          <tr>
+            <td>Accountgegevens</td>
+            <td>Naam, e-mailadres, telefoonnummer, profielfoto, aanmelding via Google of Apple</td>
+            <td>Om uw account aan te maken en te beveiligen en u te identificeren tegenover andere gebruikers</td>
+          </tr>
+          <tr>
+            <td>Locatie</td>
+            <td>Exacte of bij benadering bepaalde locatie terwijl de app wordt gebruikt; locatie op de achtergrond uitsluitend terwijl u actief onderweg bent naar een geaccepteerde klus</td>
+            <td>Om klussen in de buurt te tonen, exacte adressen te vervagen totdat een klus is geaccepteerd, en een opdrachtgever te laten zien dat zijn of haar uitvoerder onderweg is</td>
+          </tr>
+          <tr>
+            <td>Klusinhoud</td>
+            <td>Titels en beschrijvingen van klussen, foto's, video's en spraakberichten die u toevoegt</td>
+            <td>Om klussen te plaatsen en af te ronden en te communiceren in de chat van een klus</td>
+          </tr>
+          <tr>
+            <td>Betaalgegevens</td>
+            <td>Rechtstreeks verwerkt door Stripe — wij slaan geen volledige kaartnummers op</td>
+            <td>Om betalingen voor klussen in rekening te brengen en voltooid werk uit te betalen</td>
+          </tr>
+          <tr>
+            <td>Gebruiks- &amp; apparaatgegevens</td>
+            <td>Appversie, type apparaat, crash- en diagnoselogboeken, token voor pushmeldingen</td>
+            <td>Om de Dienst te laten functioneren, te beveiligen en storingen op te lossen</td>
+          </tr>
+          <tr>
+            <td>Beoordelingen &amp; meldingen</td>
+            <td>Sterrenbeoordelingen, geschreven recensies en alle meldingen die u over een klus indient</td>
+            <td>Om vertrouwen en veiligheid op het gehele marktplatform te waarborgen</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Hoe wij de gegevens gebruiken</h2>
+      <ul>
+        <li>Klussen koppelen aan personen in de buurt en relevante advertenties tonen op de kaart of in de feed</li>
+        <li>Betalingen, platformkosten en uitbetalingen verwerken via Stripe</li>
+        <li>Chat en spraakberichten mogelijk maken tussen de plaatser en de aannemer van een klus</li>
+        <li>Meldingen versturen over klussen in de buurt, bijna verlopen klussen of gewijzigde klussen</li>
+        <li>Meldingen, geschillen, fraude en schendingen van onze Gebruiksvoorwaarden onderzoeken</li>
+        <li>De Dienst onderhouden, beveiligen en verbeteren, onder meer door het analyseren van geaggregeerde of geanonimiseerde gebruikspatronen</li>
+        <li>Voldoen aan wettelijke verplichtingen en onze overeenkomsten handhaven</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Met wie wij de gegevens delen</h2>
+      <ul>
+        <li><strong>De andere partij bij een klus</strong> — een plaatser en een aannemer zien elkaars naam en beoordeling en, zodra een klus is geaccepteerd, gedurende die klus een nauwkeurigere locatie.</li>
+        <li><strong>Stripe</strong> — onze betalingsverwerker, voor het afhandelen van betalingen en uitbetalingen. Het eigen privacybeleid van Stripe is van toepassing op de wijze waarop Stripe betaalgegevens verwerkt.</li>
+        <li><strong>Dienstverleners</strong> — aanbieders van hosting, pushmeldingen, analyse en ingebedde kaarten die helpen bij het laten functioneren van de app en die contractueel gebonden zijn om gegevens uitsluitend te gebruiken voor het verlenen van die dienst.</li>
+        <li><strong>Wettelijke &amp; veiligheidsredenen</strong> — wetshandhavingsinstanties, toezichthouders of andere derden wanneer wij te goeder trouw menen dat verstrekking wettelijk vereist is, nodig is om de rechten, eigendommen of veiligheid van Last-Minute Jobs, onze gebruikers of het publiek te beschermen, of noodzakelijk is om fraude of een schending van onze Voorwaarden te onderzoeken.</li>
+        <li><strong>Bedrijfsoverdrachten</strong> — indien Last-Minute Jobs betrokken is bij een fusie, overname, financiering of verkoop van activa, kunnen gebruikersgegevens worden overgedragen als onderdeel van die transactie, met inachtneming van gebruikelijke vertrouwelijkheidswaarborgen.</li>
+      </ul>
+      <p>Wij verkopen geen persoonsgegevens tegen een geldelijke vergoeding.</p>
+    </div>
+
+    <div class="card">
+      <h2>Uw keuzes</h2>
+      <ul>
+        <li>Toestemmingen voor locatie, camera, microfoon en meldingen kunt u op elk moment uitschakelen in de instellingen van uw apparaat — sommige functies (zoals het plaatsen van een klus met een foto of het zien van klussen in de buurt) werken dan niet.</li>
+        <li>U kunt uw profiel op elk moment bewerken via Instellingen in de app.</li>
+        <li>U kunt een kopie of verwijdering van uw account en gegevens aanvragen door hieronder contact met ons op te nemen, onverminderd ons recht om gegevens te bewaren voor zover nodig voor wettelijke, beveiligings-, fraudepreventie- of geschillenbeslechtingsdoeleinden.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Bewaartermijn</h2>
+      <p>Wij bewaren klusgegevens, berichten en betalingsgeschiedenis zolang uw account actief is, plus daarna een beperkte periode voor zover nodig om te voldoen aan wettelijke, fiscale, beveiligings- en geschillenbeslechtingsvereisten. Media die aan een klus zijn toegevoegd (foto's, video's, spraakberichten) worden na afronding of annulering van een klus automatisch verwijderd na een vastgestelde bewaartermijn, behalve wanneer bewaring nodig is voor een lopend geschil of onderzoek.</p>
+    </div>
+
+    <div class="card">
+      <h2>Beveiliging</h2>
+      <div class="callout">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M12 2l8 4v6c0 5.2-3.4 9.4-8 10.5C7.4 21.4 4 17.2 4 12V6l8-4z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 8v5M12 16.5h.01" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        <p>Wij nemen redelijke technische en organisatorische maatregelen om uw gegevens te beschermen. Geen enkele methode van verzending of opslag is 100% veilig en wij kunnen geen absolute veiligheid garanderen. U bent zelf verantwoordelijk voor het vertrouwelijk houden van uw inloggegevens.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Privacy van kinderen</h2>
+      <p>Last-Minute Jobs is bedoeld voor gebruikers van 18 jaar en ouder. Wij verzamelen niet bewust gegevens van personen jonger dan 18 jaar en zullen dergelijke gegevens verwijderen zodra wij hiervan kennisnemen.</p>
+    </div>
+
+    <div class="card">
+      <h2>Wijzigingen in dit beleid</h2>
+      <p>Wij kunnen dit beleid van tijd tot tijd naar eigen goeddunken aanpassen. Wanneer wij dat doen, werken wij de ingangsdatum hierboven bij; voortgezet gebruik van de Dienst nadat een wijziging van kracht is geworden, geldt als aanvaarding van het gewijzigde beleid.</p>
+    </div>
+
+    <div class="contact">
+      <div>
+        <h2>Vragen?</h2>
+        <p>Wij helpen u graag — neem gerust op elk moment contact met ons op.</p>
+      </div>
+      <a class="btn" href="mailto:elevengroupspain@gmail.com">Neem contact op</a>
+    </div>
+
+    <footer>Last-Minute Jobs · Deze pagina is een uitgangspunt voor een concept, geen juridisch advies, en dient door een gekwalificeerde jurist voor uw rechtsgebied te worden beoordeeld voordat u erop vertrouwt. Bij verschillen prevaleert de Engelse versie.</footer>
+  </div>
+
+  <!-- ===== TERMS ===== -->
+  <div id="panel-terms" role="tabpanel" aria-labelledby="tab-terms" hidden>
+    <p class="eyebrow">Gebruiksvoorwaarden</p>
+    <h1>De regels voor het gebruik van Last-Minute Jobs</h1>
+    <p class="meta">Ingangsdatum: 6 oktober 2026</p>
+
+    <div class="summary">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M12 2l8 4v6c0 5.2-3.4 9.4-8 10.5C7.4 21.4 4 17.2 4 12V6l8-4z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9.5 12l2 2 4-4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <p><strong>Kort samengevat:</strong> Last-Minute Jobs is een neutraal marktplatform dat mensen die taken plaatsen verbindt met mensen die ze uitvoeren. Wij zijn geen partij bij een klus — wij houden geen toezicht op, controleren of garanderen het werk, de personen of de uitkomst niet. U gebruikt de Dienst, ontmoet andere gebruikers en voert klussen volledig voor eigen risico uit.</p>
+    </div>
+
+    <div class="card">
+      <h2>1. Aanvaarding van de voorwaarden</h2>
+      <p>Door een account aan te maken of Last-Minute Jobs te gebruiken (“de Dienst”, “wij”, “ons”) gaat u akkoord met deze Gebruiksvoorwaarden en ons Privacybeleid. Als u niet akkoord gaat, gebruik de Dienst dan niet. U moet minimaal 18 jaar oud zijn om de Dienst te gebruiken.</p>
+    </div>
+
+    <div class="card">
+      <h2>2. Wat de Dienst is (en niet is)</h2>
+      <p>Last-Minute Jobs is een technologieplatform waarmee de ene gebruiker (“Plaatser”) een taak kan aanbieden en een andere gebruiker (“Uitvoerder”) deze kan accepteren en uitvoeren, waarbij de betaling via de app verloopt. Wij zijn uitsluitend een neutrale tussenpersoon:</p>
+      <ul>
+        <li>Wij nemen geen Uitvoerder of Plaatser in dienst, en wij screenen, certificeren, trainen of superviseren hen niet.</li>
+        <li>Wij inspecteren geen werklocaties, controleren geen klusbeschrijvingen en garanderen niet de kwaliteit, rechtmatigheid, veiligheid of voltooiing van enige klus.</li>
+        <li>Door het gebruik van de Dienst ontstaat geen dienstverband, vertegenwoordigingsrelatie, maatschap of joint venture tussen Last-Minute Jobs en enige gebruiker, noch tussen een Plaatser en een Uitvoerder.</li>
+        <li>Alle interacties, afspraken en persoonlijke ontmoetingen tussen gebruikers gelden uitsluitend tussen die gebruikers.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>3. Aanvaarding van risico</h2>
+      <div class="callout">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M12 3l9 16H3l9-16z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 9.5v4M12 16.5h.01" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        <p>Het afspreken met een onbekende om een taak uit te voeren of te laten uitvoeren brengt inherente risico's met zich mee, waaronder het risico van materiële schade, letsel, diefstal of fraude. U aanvaardt al deze risico's vrijwillig. Wij raden sterk aan om waar mogelijk op een openbare plek af te spreken, identiteiten te verifiëren en uw gezond verstand te gebruiken voordat u toegang verleent tot uw woning, voertuig of bezittingen.</p>
+      </div>
+      <p>U bent als enige verantwoordelijk voor de beoordeling van en de omgang met andere gebruikers, en voor de uitkomst van elke klus die u plaatst of accepteert. Dit omvat het nagaan van elke vergunning, verzekering of kwalificatie die een klus volgens het plaatselijke recht kan vereisen.</p>
+    </div>
+
+    <div class="card">
+      <h2>4. Betalingen, kosten &amp; annuleringen</h2>
+      <ul>
+        <li>Betalingen worden verwerkt door Stripe. Door de Dienst te gebruiken gaat u ook akkoord met de voorwaarden van Stripe die gelden voor de door u gebruikte betaalmethode.</li>
+        <li>Last-Minute Jobs brengt platformkosten in rekening (getoond voordat een klus wordt geplaatst of geaccepteerd), die worden ingehouden op de prijs van de klus.</li>
+        <li>Prijzen, bonussen en annuleringskosten worden door gebruikers vastgesteld, binnen de eventuele grenzen die de app toont. Wij garanderen geen minimumverdiensten of beschikbaarheid van klussen.</li>
+        <li>Late annuleringen, het niet verschijnen en betwiste afrondingen worden afgehandeld volgens het annulerings- en geschillenproces in de app, dat wij naar eigen goeddunken kunnen aanpassen. Onze te goeder trouw genomen beslissing over een geschil is bindend tussen het platform en de betrokken gebruikers.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>5. Wat de prijs omvat: arbeid, onderdelen &amp; materialen</h2>
+      <ul>
+        <li>Tenzij een klus anders vermeldt, geldt de door een Plaatser geboden prijs uitsluitend voor de tijd en vaardigheid van de Uitvoerder (arbeid).</li>
+        <li>Onderdelen, materialen, benodigdheden, huur van apparatuur, brandstof, parkeerkosten, tol en afvoerkosten zijn niet inbegrepen, tenzij de klusbeschrijving dit vermeldt. De klusbeschrijving dient aan te geven wie deze levert.</li>
+        <li>Een Uitvoerder mag geen onderdelen of materialen kopen waarvoor hij of zij vergoeding verwacht, tenzij de Plaatser het artikel en het bedrag vooraf in de app of in de chat van de klus heeft goedgekeurd. Bewaar de kassabon; een Uitvoerder kan worden gevraagd deze te overleggen.</li>
+        <li>Wanneer de Plaatser de materialen levert, is de Plaatser verantwoordelijk voor het tijdig en in geschikte staat beschikbaar stellen ervan.</li>
+        <li>Kosten die niet vooraf zijn overeengekomen komen niet voor onze rekening, en wij garanderen niet dat zij zullen worden vergoed.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>6. Wijzigingen in een klus &amp; extra tijd</h2>
+      <ul>
+        <li>De klusbeschrijving, de prijs en de geschatte tijd zoals getoond op het moment dat een klus wordt geaccepteerd, vormen de overeenkomst tussen Plaatser en Uitvoerder.</li>
+        <li>Als het werk omvangrijker blijkt te zijn dan beschreven, dient de Uitvoerder dit te melden voordat hij of zij verdergaat. Extra werk, extra tijd of een hogere prijs moeten tussen de twee gebruikers worden overeengekomen voordat het extra werk begint, bij voorkeur in de app.</li>
+        <li>Een Uitvoerder die zonder overeenstemming doorgaat buiten de afgesproken omvang of tijd, doet dat voor eigen risico. Een Plaatser die om extra werk vraagt, moet er rekening mee houden dat hij of zij hiervoor moet betalen.</li>
+        <li>Elke gebruiker mag een wijziging weigeren. Als zij het niet eens worden, mag de Uitvoerder stoppen bij de afgesproken omvang en zijn de hieronder vermelde annulerings- en geschillenregels van toepassing.</li>
+        <li>Betalingen voor overeengekomen extra's dienen via de Dienst te worden gedaan. Wij kunnen geen bescherming bieden voor, of geschillen oplossen over, geld dat buiten de Dienst om is betaald.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>7. Vergunningplichtig &amp; gereguleerd werk</h2>
+      <p>Voor bepaald werk, zoals gas-, elektra-, bepaalde loodgieters- en bouwwerkzaamheden, of werk waarvoor een verzekering nodig is, kan wettelijk een licentie, certificaat of vergunning vereist zijn. Uitvoerders moeten beschikken over elke licentie en kwalificatie die het werk vereist en mogen geen klus accepteren die zij wettelijk niet mogen uitvoeren. Plaatsers zijn verantwoordelijk voor het kiezen van een passend gekwalificeerde Uitvoerder voor gereguleerd werk. Wij controleren licenties of kwalificaties niet, tenzij de app duidelijk een geverifieerde badge toont, en zelfs dan garanderen wij de kwaliteit of veiligheid van het werk niet.</p>
+    </div>
+
+    <div class="card">
+      <h2>8. Annuleringen, niet verschijnen &amp; afronding</h2>
+      <ul>
+        <li>Een Plaatser mag een klus die nog niet is geaccepteerd kosteloos annuleren.</li>
+        <li>Nadat een klus is geaccepteerd, kan een annulering, het niet verschijnen of een aanzienlijke vertraging leiden tot een vergoeding of terugbetaling zoals getoond in de app. Als een Uitvoerder al is afgereisd of met het werk is begonnen, kunnen voorrij- of annuleringskosten van toepassing zijn.</li>
+        <li>Als een Uitvoerder niet binnen een redelijke tijd na de afgesproken starttijd arriveert, mag de Plaatser annuleren en ontvangt deze het voor de klus gereserveerde bedrag terug.</li>
+        <li>Wanneer een Uitvoerder een klus als voltooid markeert, heeft de Plaatser de in de app getoonde bevestigingstermijn (momenteel 24 uur) om de afronding te bevestigen of een probleem te melden. Een Plaatser die een probleem meldt, dient foto's of details toe te voegen. Als de Plaatser geen actie onderneemt, wordt de betaling automatisch aan de Uitvoerder vrijgegeven.</li>
+        <li>Geschillen worden beoordeeld volgens het geschillenproces in de app op basis van de informatie die beide gebruikers verstrekken, zoals berichten, foto's en tijdstempels. Wij kunnen een betaling terugbetalen, vrijgeven of splitsen zoals wij billijk achten, en wij kunnen dit proces van tijd tot tijd wijzigen.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>9. Zelfstandige Uitvoerders &amp; belastingen</h2>
+      <p>Uitvoerders zijn zelfstandige personen en geen werknemers of vertegenwoordigers van Last-Minute Jobs of van enige Plaatser. Elke Uitvoerder is zelf verantwoordelijk voor zijn of haar eigen belastingen, verzekeringen, licenties, gereedschap en de wijze waarop het werk wordt uitgevoerd, en voor het opgeven van inkomsten zoals wettelijk vereist. Plaatsers zijn verantwoordelijk voor de veiligheid van hun eigen locatie en voor het verstrekken van juiste gegevens over de klus.</p>
+    </div>
+
+    <div class="card">
+      <h2>10. Verboden gedrag</h2>
+      <p>U stemt ermee in om niet: illegale, gevaarlijke of frauduleuze klusaanbiedingen te plaatsen; een andere gebruiker te intimideren, te bedreigen of te discrimineren; de Dienst te omzeilen om kosten te ontlopen, onder meer door te vragen om of te accepteren van betaling voor een klus buiten de app; uw identiteit, kwalificaties of de aard van een klus verkeerd voor te stellen; of de Dienst te gebruiken voor enig doel dat in strijd is met het toepasselijke recht.</p>
+    </div>
+
+    <div class="card">
+      <h2>11. Uitsluiting van garanties</h2>
+      <div class="callout">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M12 3l9 16H3l9-16z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 9.5v4M12 16.5h.01" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        <p>DE DIENST WORDT AANGEBODEN “ZOALS DEZE IS” EN “ZOALS BESCHIKBAAR”, ZONDER ENIGE GARANTIE, EXPLICIET OF IMPLICIET, MET INBEGRIP VAN GARANTIES VAN VERHANDELBAARHEID, GESCHIKTHEID VOOR EEN BEPAALD DOEL, NIET-INBREUK, OF DAT DE DIENST ONONDERBROKEN, VEILIG OF FOUTLOOS ZAL ZIJN. WIJ GARANDEREN NIET HET GEDRAG, DE BETROUWBAARHEID OF DE VEILIGHEID VAN ENIGE GEBRUIKER.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>12. Beperking van aansprakelijkheid</h2>
+      <div class="callout">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M12 3l9 16H3l9-16z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 9.5v4M12 16.5h.01" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        <p>VOOR ZOVER MAXIMAAL TOEGESTAAN BIJ WET ZIJN LAST-MINUTE JOBS EN HAAR EXPLOITANTEN NIET AANSPRAKELIJK VOOR ENIGE INDIRECTE, INCIDENTELE, BIJZONDERE, GEVOLG- OF STRAFRECHTELIJKE SCHADE, OF ENIG VERLIES VAN WINST, GEGEVENS OF GOODWILL, VOORTVLOEIEND UIT OF VERBAND HOUDEND MET UW GEBRUIK VAN DE DIENST, ENIGE KLUS OF ENIGE INTERACTIE MET EEN ANDERE GEBRUIKER — MET INBEGRIP VAN LICHAMELIJK LETSEL, MATERIËLE SCHADE OF DIEFSTAL — ZELFS INDIEN WIJ VAN DE MOGELIJKHEID VAN DERGELIJKE SCHADE OP DE HOOGTE ZIJN GESTELD. ONZE TOTALE GECUMULEERDE AANSPRAKELIJKHEID VOOR ENIGE VORDERING VOORTVLOEIEND UIT DE DIENST ZAL NIET HOGER ZIJN DAN HET HOOGSTE VAN: DE PLATFORMKOSTEN DIE U IN DE DRIE MAANDEN VOOR DE VORDERING HEBT BETAALD, OF USD 100.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>13. Vrijwaring</h2>
+      <p>U stemt ermee in Last-Minute Jobs, haar exploitanten en gelieerde ondernemingen te vrijwaren, te verdedigen en schadeloos te stellen voor elke vordering, schade, verlies of kosten (met inbegrip van redelijke juridische kosten) voortvloeiend uit uw gebruik van de Dienst, een klus die u hebt geplaatst of geaccepteerd, uw schending van deze Voorwaarden, of uw schending van enig recht van een andere gebruiker of derde.</p>
+    </div>
+
+    <div class="card">
+      <h2>14. Opschorting &amp; beëindiging van accounts</h2>
+      <p>Wij kunnen uw account naar eigen goeddunken, met of zonder kennisgeving, opschorten of beëindigen wegens gedrag waarvan wij menen dat het in strijd is met deze Voorwaarden, andere gebruikers schaadt of de Dienst schaadt. U kunt op elk moment stoppen met het gebruik van de Dienst en uw account verwijderen.</p>
+    </div>
+
+    <div class="card">
+      <h2>15. Geschillenbeslechting</h2>
+      <p>Wij proberen eerst elk geschil informeel op te lossen — neem hieronder contact met ons op. Een geschil dat niet informeel kan worden opgelost, wordt behandeld via individuele arbitrage of een rechtbank voor geringe vorderingen waar dit plaatselijk vereist of toegestaan is, en niet als onderdeel van een collectieve of vertegenwoordigende actie, voor zover afdwingbaar onder het toepasselijke recht. Niets hierin beperkt de niet-opzegbare wettelijke rechten van een gebruiker op grond van het plaatselijke consumentenbeschermingsrecht.</p>
+    </div>
+
+    <div class="card">
+      <h2>16. Wijzigingen in deze voorwaarden</h2>
+      <p>Wij kunnen deze Voorwaarden naar eigen goeddunken aanpassen. Wanneer wij dat doen, werken wij de ingangsdatum hierboven bij; voortgezet gebruik van de Dienst nadat een wijziging van kracht is geworden, geldt als aanvaarding.</p>
+    </div>
+
+    <div class="contact">
+      <div>
+        <h2>Vragen?</h2>
+        <p>Wij helpen u graag — neem gerust op elk moment contact met ons op.</p>
+      </div>
+      <a class="btn" href="mailto:elevengroupspain@gmail.com">Neem contact op</a>
+    </div>
+
+    <footer>Last-Minute Jobs · Deze pagina is een uitgangspunt voor een concept, geen juridisch advies, en dient door een gekwalificeerde jurist voor uw rechtsgebied te worden beoordeeld — in het bijzonder met betrekking tot aansprakelijkheid, afdwingbaarheid van arbitrage en consumentenbeschermingsregels — voordat u erop vertrouwt. Bij verschillen prevaleert de Engelse versie.</footer>
+  </div>
+</div>
+
+
+<script>
+(function () {
+  var tabs = document.querySelectorAll(".tab");
+  var panels = { privacy: document.getElementById("panel-privacy"), terms: document.getElementById("panel-terms") };
+
+  function select(name) {
+    tabs.forEach(function (t) {
+      var isMatch = t.id === "tab-" + name;
+      t.setAttribute("aria-selected", isMatch ? "true" : "false");
+    });
+    Object.keys(panels).forEach(function (k) {
+      panels[k].hidden = k !== name;
+    });
+    try { history.replaceState(null, "", "#" + name); } catch (e) {}
+  }
+
+  tabs.forEach(function (t) {
+    t.addEventListener("click", function () {
+      select(t.id.replace("tab-", ""));
+    });
+  });
+
+  var sw = document.getElementById("lang-switch");
+  if (sw) {
+    sw.addEventListener("click", function (e) {
+      var a = e.target.closest ? e.target.closest("a") : null;
+      if (!a) return;
+      e.preventDefault();
+      location.href = a.getAttribute("href") + (location.hash || "");
+    });
+  }
+
+  var initial = (location.hash || "").replace("#", "");
+  select(initial === "terms" ? "terms" : "privacy");
+})();
+</script>
+</body>
+</html>
