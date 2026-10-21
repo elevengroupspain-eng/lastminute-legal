@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Last-Minute Jobs</title>
+<meta name="description" content="Need a hand in the next hour? Post a job and a nearby tasker accepts. Get notified when Last-Minute Jobs launches.">
+<meta property="og:title" content="Last-Minute Jobs">
+<meta property="og:description" content="Post a job. A nearby tasker accepts. You pay only when it's done.">
+<meta property="og:image" content="poster-en.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root { --orange:#f2a93b; --orange-deep:#d98a14; --ink:#1b1a17; --white:#fff; --cream:#fff7ea; }
+  * { box-sizing: border-box; }
+  html { background: var(--orange); }
+  body {
+    margin: 0; color: var(--ink); background: var(--orange);
+    font-family: Poppins, -apple-system, "Segoe UI", Arial, sans-serif;
+    padding-inline: 16px; -webkit-font-smoothing: antialiased;
+    background-image: repeating-linear-gradient(135deg, rgba(255,255,255,.07) 0 28px, transparent 28px 56px);
+  }
+  .wrap { max-width: 980px; margin: 0 auto; padding-block: 20px 48px; }
+  .top { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+  .brand { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 18px; color: var(--white); }
+  .brand img { width: 34px; height: auto; }
+  .langs { display: flex; gap: 6px; }
+  .langs button {
+    font: inherit; font-weight: 700; font-size: 13px; border: 2px solid rgba(255,255,255,.7); color: var(--white);
+    background: transparent; border-radius: 999px; padding: 5px 12px; cursor: pointer;
+  }
+  .langs button[aria-pressed="true"] { background: var(--white); color: var(--orange-deep); border-color: var(--white); }
+  .langs button:focus-visible, .cta:focus-visible, input:focus-visible { outline: 3px solid var(--ink); outline-offset: 2px; }
+  .hero { display: grid; grid-template-columns: 1.1fr .9fr; gap: 36px; align-items: center; padding-block: 36px 24px; }
+  .eyebrow { display: inline-block; background: var(--ink); color: var(--orange); font-weight: 700; font-size: 13px; letter-spacing: .08em; text-transform: uppercase; padding: 6px 14px; border-radius: 999px; }
+  h1 { font-size: clamp(36px, 7vw, 64px); line-height: 1.04; font-weight: 800; color: var(--white); margin: 16px 0 14px; text-wrap: balance; text-shadow: 0 3px 0 rgba(150,80,0,.25); }
+  .sub { font-size: clamp(17px, 3.4vw, 21px); font-weight: 500; margin: 0 0 24px; max-width: 30ch; }
+  form { width: 100%; background: var(--white); border-radius: 22px; padding: 18px; box-shadow: 0 14px 34px rgba(120,60,0,.28); max-width: 460px; }
+  form label { display: block; font-weight: 700; font-size: 15px; margin-bottom: 10px; }
+  .row { display: flex; gap: 10px; flex-wrap: wrap; }
+  input[type=text] { flex: 1 1 170px; min-width: 0; font: inherit; font-size: 16px; padding: 13px 14px; border-radius: 12px; border: 2px solid #e8dcc8; background: #fffdf8; color: var(--ink); }
+  .cta { font: inherit; font-weight: 700; font-size: 16px; border: 0; cursor: pointer; background: var(--ink); color: var(--orange); border-radius: 12px; padding: 13px 22px; }
+  .cta:disabled { opacity: .6; cursor: default; }
+  .consent { font-size: 12px; color: #6d6455; margin: 10px 2px 0; line-height: 1.45; }
+  .consent a { color: var(--orange-deep); font-weight: 600; }
+  .msg { margin: 10px 2px 0; font-weight: 600; font-size: 14px; min-height: 1.2em; }
+  .msg.ok { color: #15803d; } .msg.err { color: #b91c1c; }
+  .hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+  .video { justify-self: center; width: min(100%, 330px); }
+  .video video { width: 100%; height: auto; aspect-ratio: 9 / 16; border-radius: 28px; background: #000; box-shadow: 0 22px 50px rgba(100,50,0,.4); display: block; }
+  .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 30px; }
+  .step { background: var(--cream); border-radius: 20px; padding: 18px; }
+  .step b { display: block; font-size: 17px; margin-bottom: 4px; }
+  .step span { font-size: 14.5px; color: #4a4437; line-height: 1.5; }
+  .badge { width: 34px; height: 34px; border-radius: 50%; background: var(--orange); color: var(--ink); font-weight: 800; display: grid; place-items: center; margin-bottom: 10px; }
+  footer { margin-top: 34px; font-size: 13px; color: rgba(27,26,23,.78); display: flex; gap: 16px; flex-wrap: wrap; justify-content: space-between; }
+  footer a { color: inherit; font-weight: 600; }
+  .hero > * { min-width: 0; }
+  @media (max-width: 760px) { .hero { grid-template-columns: minmax(0, 1fr); gap: 26px; padding-top: 24px; } .steps { grid-template-columns: 1fr; } .video { order: 2; } }
+  @media (prefers-reduced-motion: no-preference) { .cta { transition: transform .12s; } .cta:hover:not(:disabled) { transform: translateY(-2px); } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div class="brand"><img src="logo.png" alt=""><span>Last-Minute Jobs</span></div>
+    <div class="langs" id="langs" role="group" aria-label="Language">
+      <button type="button" data-l="en">EN</button>
+      <button type="button" data-l="es">ES</button>
+      <button type="button" data-l="fr">FR</button>
+      <button type="button" data-l="nl">NL</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <span class="eyebrow" id="t-eyebrow"></span>
+        <h1 id="t-h1"></h1>
+        <p class="sub" id="t-sub"></p>
+        <form id="f" novalidate>
+          <label for="contact" id="t-label"></label>
+          <div class="row">
+            <input type="text" id="contact" name="contact" autocomplete="email" inputmode="email" maxlength="120">
+            <button class="cta" id="btn" type="submit"></button>
+          </div>
+          <input class="hp" type="text" id="website" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <p class="consent" id="t-consent"></p>
+          <p class="msg" id="msg" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+      <div class="video">
+        <video id="v" controls playsinline preload="none" poster="poster-en.jpg"><source id="vs" src="ad-en.mp4" type="video/mp4"></video>
+      </div>
+    </section>
+
+    <section class="steps" aria-label="How it works">
+      <div class="step"><div class="badge">1</div><b id="s1t"></b><span id="s1d"></span></div>
+      <div class="step"><div class="badge">2</div><b id="s2t"></b><span id="s2d"></span></div>
+      <div class="step"><div class="badge">3</div><b id="s3t"></b><span id="s3d"></span></div>
+    </section>
+  </main>
+
+  <footer>
+    <span>© Last-Minute Jobs</span>
+    <span><a id="priv" href="../privacy.html"></a></span>
+  </footer>
+</div>
+
+<script>
+(function () {
+  var API = "https://lastminute-jobs-api.abdullareceiptly.workers.dev/api/waitlist";
+  var T = {
+    en: { eyebrow:"Coming soon", h1:"Need a hand in the next hour?", sub:"Post a job. A nearby tasker accepts. You pay only when it's done.",
+      label:"Get notified when we launch", ph:"Email or WhatsApp number", btn:"Notify me",
+      consent:"We only use this to tell you about the launch. See our", priv:"Privacy Policy",
+      ok:"You're on the list. We'll message you at launch.", bad:"Please enter a valid email or phone number.", fail:"Something went wrong. Please try again.",
+      s1t:"Post a job", s1d:"Say what you need and set your price. It takes seconds.",
+      s2t:"A tasker nearby accepts", s2d:"People close to you see it and accept, often within minutes.",
+      s3t:"Pay when it's done", s3d:"Your payment is held securely and released only after the job is complete." },
+    es: { eyebrow:"Próximamente", h1:"¿Necesitas ayuda en la próxima hora?", sub:"Publica un trabajo. Un tasker cercano lo acepta. Solo pagas cuando está hecho.",
+      label:"Avísame cuando se lance", ph:"Email o número de WhatsApp", btn:"Avísame",
+      consent:"Solo usamos esto para avisarte del lanzamiento. Consulta nuestra", priv:"Política de privacidad",
+      ok:"Estás en la lista. Te avisaremos en el lanzamiento.", bad:"Introduce un email o teléfono válido.", fail:"Algo salió mal. Inténtalo de nuevo.",
+      s1t:"Publica un trabajo", s1d:"Cuenta lo que necesitas y fija tu precio. Solo tarda unos segundos.",
+      s2t:"Un tasker cercano lo acepta", s2d:"Las personas cerca de ti lo ven y lo aceptan, a menudo en minutos.",
+      s3t:"Paga cuando esté hecho", s3d:"Tu pago se retiene de forma segura y se libera solo al completarse el trabajo." },
+    fr: { eyebrow:"Bientôt disponible", h1:"Besoin d'un coup de main dans l'heure ?", sub:"Publiez une mission. Un tasker proche l'accepte. Vous ne payez qu'une fois terminée.",
+      label:"Être prévenu du lancement", ph:"E-mail ou numéro WhatsApp", btn:"Me prévenir",
+      consent:"Nous n'utilisons ceci que pour vous informer du lancement. Voir notre", priv:"Politique de confidentialité",
+      ok:"Vous êtes sur la liste. Nous vous écrirons au lancement.", bad:"Entrez un e-mail ou un numéro valide.", fail:"Une erreur est survenue. Réessayez.",
+      s1t:"Publiez une mission", s1d:"Dites ce dont vous avez besoin et fixez votre prix, en quelques secondes.",
+      s2t:"Un tasker proche accepte", s2d:"Les personnes près de chez vous la voient et l'acceptent, souvent en quelques minutes.",
+      s3t:"Payez quand c'est fait", s3d:"Votre paiement est conservé en sécurité et libéré seulement une fois la mission terminée." },
+    nl: { eyebrow:"Binnenkort beschikbaar", h1:"Hulp nodig binnen een uur?", sub:"Plaats een klus. Een tasker in de buurt accepteert. Je betaalt pas als het klaar is.",
+      label:"Krijg een bericht bij de lancering", ph:"E-mail of WhatsApp-nummer", btn:"Houd me op de hoogte",
+      consent:"We gebruiken dit alleen om je over de lancering te informeren. Zie ons", priv:"Privacybeleid",
+      ok:"Je staat op de lijst. We sturen je een bericht bij de lancering.", bad:"Vul een geldig e-mailadres of telefoonnummer in.", fail:"Er ging iets mis. Probeer het opnieuw.",
+      s1t:"Plaats een klus", s1d:"Zeg wat je nodig hebt en bepaal je prijs. Het kost slechts seconden.",
+      s2t:"Een tasker in de buurt accepteert", s2d:"Mensen bij jou in de buurt zien het en accepteren, vaak binnen minuten.",
+      s3t:"Betaal als het klaar is", s3d:"Je betaling wordt veilig vastgehouden en pas vrijgegeven nadat de klus klaar is." }
+  };
+  var privFile = { en:"privacy.html", es:"privacy-es.html", fr:"privacy-fr.html", nl:"privacy-nl.html" };
+  var lang = "en";
+  function pick() {
+    var q = new URLSearchParams(location.search).get("lang");
+    if (q && T[q]) return q;
+    var n = (navigator.language || "en").slice(0, 2).toLowerCase();
+    return T[n] ? n : "en";
+  }
+  function $(id) { return document.getElementById(id); }
+  function apply(l) {
+    lang = l; var t = T[l];
+    document.documentElement.lang = l;
+    $("t-eyebrow").textContent = t.eyebrow; $("t-h1").textContent = t.h1; $("t-sub").textContent = t.sub;
+    $("t-label").textContent = t.label; $("contact").placeholder = t.ph; $("btn").textContent = t.btn;
+    ["s1t","s1d","s2t","s2d","s3t","s3d"].forEach(function (k) { $(k).textContent = t[k]; });
+    var c = $("t-consent"); c.textContent = t.consent + " ";
+    var a = document.createElement("a"); a.href = "../" + privFile[l]; a.textContent = t.priv + "."; c.appendChild(a);
+    $("priv").href = "../" + privFile[l]; $("priv").textContent = t.priv;
+    var v = $("v"); v.pause(); v.poster = "poster-" + l + ".jpg"; $("vs").src = "ad-" + l + ".mp4"; v.load();
+    Array.prototype.forEach.call(document.querySelectorAll("#langs button"), function (b) { b.setAttribute("aria-pressed", String(b.dataset.l === l)); });
+    document.title = "Last-Minute Jobs";
+  }
+  $("langs").addEventListener("click", function (e) { var b = e.target.closest("button"); if (b) apply(b.dataset.l); });
+  var emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+  function valid(v) { return emailRe.test(v) || (/^[+\d][\d\s().-]{6,19}$/.test(v)); }
+  $("f").addEventListener("submit", function (e) {
+    e.preventDefault();
+    var msg = $("msg"), btn = $("btn"), v = $("contact").value.trim();
+    msg.className = "msg";
+    if ($("website").value) return;
+    if (!valid(v)) { msg.textContent = T[lang].bad; msg.className = "msg err"; return; }
+    btn.disabled = true;
+    var p = new URLSearchParams(location.search);
+    fetch(API, { method: "POST", headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ contact: v, lang: lang, source: (p.get("utm_source") || p.get("src") || "") + "|" + (p.get("utm_campaign") || "") }) })
+      .then(function (r) { if (!r.ok) throw new Error("x"); msg.textContent = T[lang].ok; msg.className = "msg ok"; $("contact").value = ""; })
+      .catch(function () { msg.textContent = T[lang].fail; msg.className = "msg err"; })
+      .then(function () { btn.disabled = false; });
+  });
+  apply(pick());
+})();
+</script>
+</body>
+</html>
