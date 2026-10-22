@@ -59,6 +59,14 @@
   .hero > * { min-width: 0; }
   @media (max-width: 760px) { .hero { grid-template-columns: minmax(0, 1fr); gap: 26px; padding-top: 24px; } .steps { grid-template-columns: 1fr; } .video { order: 2; } }
   @media (prefers-reduced-motion: no-preference) { .cta { transition: transform .12s; } .cta:hover:not(:disabled) { transform: translateY(-2px); } }
+
+  .cc { position: fixed; left: 12px; right: 12px; bottom: 12px; z-index: 50; max-width: 560px; margin: 0 auto; background: #fff; color: #1b1a17; border-radius: 16px; padding: 14px 16px; box-shadow: 0 10px 34px rgba(60,30,0,.35); font-size: 14px; line-height: 1.4; }
+  .cc[hidden] { display: none; }
+  .cc p { margin: 0 0 10px; }
+  .cc .row { display: flex; gap: 8px; }
+  .cc button { font: inherit; font-weight: 700; border-radius: 10px; padding: 9px 16px; cursor: pointer; border: 2px solid #1b1a17; }
+  .cc .yes { background: #1b1a17; color: #f2a93b; }
+  .cc .no { background: transparent; color: #1b1a17; }
 </style>
 </head>
 <body>
@@ -176,11 +184,43 @@
     var p = new URLSearchParams(location.search);
     fetch(API, { method: "POST", headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ contact: v, lang: lang, source: (p.get("utm_source") || p.get("src") || "") + "|" + (p.get("utm_campaign") || "") }) })
-      .then(function (r) { if (!r.ok) throw new Error("x"); msg.textContent = T[lang].ok; msg.className = "msg ok"; $("contact").value = ""; })
+      .then(function (r) { if (!r.ok) throw new Error("x"); msg.textContent = T[lang].ok; msg.className = "msg ok"; $("contact").value = ""; if (window.fbq) { fbq("track", "Lead"); } })
       .catch(function () { msg.textContent = T[lang].fail; msg.className = "msg err"; })
       .then(function () { btn.disabled = false; });
   });
   apply(pick());
+})();
+</script>
+
+<div class="cc" id="cc" role="dialog" aria-live="polite" hidden>
+  <p id="cc-t"></p>
+  <div class="row"><button class="yes" id="cc-y" type="button"></button><button class="no" id="cc-n" type="button"></button></div>
+</div>
+<script>
+(function () {
+  var PIXEL_ID = "1325170322966237";
+  var L = {
+    en: { t:"We use the Meta pixel to measure our ads. Allow it?", y:"Allow", n:"No thanks" },
+    es: { t:"Usamos el píxel de Meta para medir nuestros anuncios. ¿Lo permites?", y:"Permitir", n:"No, gracias" },
+    fr: { t:"Nous utilisons le pixel Meta pour mesurer nos publicités. L'autorisez-vous ?", y:"Autoriser", n:"Non merci" },
+    nl: { t:"We gebruiken de Meta-pixel om onze advertenties te meten. Toestaan?", y:"Toestaan", n:"Nee, bedankt" }
+  };
+  var cur = (navigator.language || "en").slice(0, 2); if (!L[cur]) cur = "en";
+  var box = document.getElementById("cc");
+  function text() { var x = L[cur]; document.getElementById("cc-t").textContent = x.t; document.getElementById("cc-y").textContent = x.y; document.getElementById("cc-n").textContent = x.n; }
+  function get() { try { return localStorage.getItem("lmj_cc"); } catch (e) { return null; } }
+  function set(v) { try { localStorage.setItem("lmj_cc", v); } catch (e) {} }
+  function loadPixel() {
+    if (window.fbq) return;
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq("init", PIXEL_ID); fbq("track", "PageView");
+  }
+  var st = get();
+  if (st === "yes") { loadPixel(); }
+  else if (st !== "no") { text(); box.hidden = false; }
+  document.getElementById("cc-y").onclick = function () { set("yes"); box.hidden = true; loadPixel(); };
+  document.getElementById("cc-n").onclick = function () { set("no"); box.hidden = true; };
+  document.getElementById("langs").addEventListener("click", function (e) { var b = e.target.closest("button"); if (b && L[b.dataset.l]) { cur = b.dataset.l; text(); } });
 })();
 </script>
 </body>
