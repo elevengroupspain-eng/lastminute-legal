@@ -5,9 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Last-Minute Jobs</title>
 <meta name="description" content="Last-Minute Jobs connects people who need a task done now with someone nearby who can do it. Post a job, someone accepts, the money is held securely until the job is done.">
+<link rel="alternate" hreflang="en" href="https://lastminutejobs.app/"><link rel="alternate" hreflang="es" href="https://lastminutejobs.app/index-es.html"><link rel="alternate" hreflang="fr" href="https://lastminutejobs.app/index-fr.html"><link rel="alternate" hreflang="nl" href="https://lastminutejobs.app/index-nl.html"><link rel="alternate" hreflang="ar" href="https://lastminutejobs.app/index-ar.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Cairo:wght@400;700&display=swap" rel="stylesheet">
 <style>
   :root {
     --ink: #1b1a17;
@@ -105,11 +106,23 @@
     --accent: #1b1a17;
     --accent-bg: #fff1d6;
   }
+
+  /* stripes + language switcher */
+  body { background: #f5b146 repeating-linear-gradient(135deg,#f5b146 0 90px,#f0a739 90px 180px); background-attachment: fixed; }
+  .topbar { display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; margin:0 0 28px; }
+  .topbar .brand { margin:0; }
+  .langs { display:flex; gap:6px; flex-wrap:wrap; }
+  .langs a { font-size:13px; font-weight:700; text-decoration:none; color:#1b1a17; background:rgba(255,250,240,.55); border:1px solid rgba(27,26,23,.18); border-radius:999px; padding:6px 12px; }
+  .langs a[aria-current="page"] { background:#1b1a17; color:#fff; }
+  body[dir] {}
+  html[dir="rtl"] body { font-family: Cairo, Roboto, "Segoe UI", Tahoma, Arial, sans-serif; }
+  html[dir="rtl"] ol, html[dir="rtl"] ul { padding-left:0; padding-right:22px; }
+  html[dir="rtl"] h1 { line-height:1.35; letter-spacing:0; }
 </style>
 </head>
 <body>
 <div class="wrap">
-  <p class="brand">Last-Minute Jobs</p>
+  <div class="topbar"><p class="brand">Last-Minute Jobs</p><nav class="langs" aria-label="Language"><a href="index.html" hreflang="en" aria-current="page">EN</a><a href="index-es.html" hreflang="es">ES</a><a href="index-fr.html" hreflang="fr">FR</a><a href="index-nl.html" hreflang="nl">NL</a><a href="index-ar.html" hreflang="ar">ع</a></nav></div>
   <h1>Need something done today? Someone nearby can do it.</h1>
   <p class="lead">Last-Minute Jobs is a mobile app that connects people who need a task done at short notice with people nearby who are free to do it. It is a marketplace: we introduce the two sides and handle the payment, and the tasker does the job.</p>
 
@@ -119,28 +132,28 @@
   <h2>See how it works</h2>
   <div class="shots">
     <section class="shot">
-      <div class="phone"><img src="shots/map.jpg" alt="Nearby jobs shown as pins on a map, with category filters and job cards at the bottom" width="560" height="1157"></div>
+      <div class="phone"><img src="shots/map.jpg" alt="Find jobs on the map" width="560" height="1157"></div>
       <div class="text">
         <h3>Find jobs on the map</h3>
         <p>Taskers see open jobs around them as pins on a map. Filters narrow the view by category, such as errands, pet care, moving help, cleaning or plumbing. Tap a card to see the price, the distance and the details.</p>
       </div>
     </section>
     <section class="shot">
-      <div class="phone"><img src="shots/list.jpg" alt="A list of open jobs with price, distance, poster rating and an Accept button" width="560" height="1157"></div>
+      <div class="phone"><img src="shots/list.jpg" alt="Or browse the list" width="560" height="1157"></div>
       <div class="text">
         <h3>Or browse the list</h3>
         <p>Each job shows the price, how far away it is, how long until it expires, and the poster's rating. One tap on <strong>Accept</strong> and the job is yours.</p>
       </div>
     </section>
     <section class="shot">
-      <div class="phone"><img src="shots/post.jpg" alt="The Post a job form with quick-fill templates, a description field and a category picker" width="560" height="1157"></div>
+      <div class="phone"><img src="shots/post.jpg" alt="Post a job in under a minute" width="560" height="1157"></div>
       <div class="text">
         <h3>Post a job in under a minute</h3>
         <p>Pick a quick template or describe what you need, choose a category and set the price and the place. A payment method is required before posting, so a tasker knows the job is real.</p>
       </div>
     </section>
     <section class="shot">
-      <div class="phone"><img src="shots/settings.jpg" alt="Settings screen showing skills, qualifications, identity verification, availability and payment options" width="560" height="1157"></div>
+      <div class="phone"><img src="shots/settings.jpg" alt="Build trust with a profile" width="560" height="1157"></div>
       <div class="text">
         <h3>Build trust with a profile</h3>
         <p>Taskers choose their skills, describe their qualifications and experience, and can verify their identity with an ID photo. Qualifications are shown to the people who hire them and are marked as provided by the tasker.</p>

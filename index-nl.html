@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Last-Minute Jobs</title>
+<meta name="description" content="Last-Minute Jobs verbindt mensen die nu een klus gedaan willen hebben met iemand in de buurt die het kan doen. Plaats een klus, iemand accepteert en het geld wordt veilig vastgehouden tot de klus klaar is.">
+<link rel="alternate" hreflang="en" href="https://lastminutejobs.app/"><link rel="alternate" hreflang="es" href="https://lastminutejobs.app/index-es.html"><link rel="alternate" hreflang="fr" href="https://lastminutejobs.app/index-fr.html"><link rel="alternate" hreflang="nl" href="https://lastminutejobs.app/index-nl.html"><link rel="alternate" hreflang="ar" href="https://lastminutejobs.app/index-ar.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1b1a17;
+    --ink-soft: #3d3a33;
+    --ink-faint: #746c5e;
+    --bg: #f7f5f0;
+    --surface: #ffffff;
+    --line: #e4dfd3;
+    --accent: #a8601f;
+    --accent-bg: #f6e6cf;
+    --phone: #1b1a17;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ink: #f1ede4;
+      --ink-soft: #d8d2c4;
+      --ink-faint: #a29a88;
+      --bg: #17160f;
+      --surface: #211f17;
+      --line: #38352a;
+      --accent: #e8a95a;
+      --accent-bg: #3a2c18;
+      --phone: #0b0b08;
+    }
+  }
+  :root[data-theme="dark"] {
+    --ink: #f1ede4;
+    --ink-soft: #d8d2c4;
+    --ink-faint: #a29a88;
+    --bg: #17160f;
+    --surface: #211f17;
+    --line: #38352a;
+    --accent: #e8a95a;
+    --accent-bg: #3a2c18;
+    --phone: #0b0b08;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: Roboto, -apple-system, "Segoe UI", Arial, sans-serif;
+    line-height: 1.55;
+    padding-inline: 16px;
+    padding-block: 40px 56px;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 880px; margin: 0 auto; }
+  .brand { font-weight: 700; letter-spacing: -0.2px; font-size: 18px; color: var(--accent); margin: 0 0 28px; }
+  h1 { font-size: clamp(30px, 6vw, 44px); line-height: 1.12; letter-spacing: -0.5px; margin: 0 0 14px; text-wrap: balance; max-width: 20ch; }
+  .lead { font-size: 18px; color: var(--ink-soft); margin: 0 0 24px; max-width: 60ch; }
+  h2 { font-size: 22px; margin: 56px 0 12px; letter-spacing: -0.2px; }
+  p { margin: 0 0 12px; max-width: 65ch; color: var(--ink-soft); }
+  ol, ul { margin: 0 0 12px; padding-left: 22px; color: var(--ink-soft); max-width: 65ch; }
+  li { margin-bottom: 8px; }
+
+  .shots { display: grid; grid-template-columns: 1fr; gap: 48px; margin-top: 32px; }
+  .shot { display: grid; grid-template-columns: minmax(0, 260px) minmax(0, 1fr); gap: 32px; align-items: center; }
+  .shot:nth-child(even) { grid-template-columns: minmax(0, 1fr) minmax(0, 260px); }
+  .shot:nth-child(even) .phone { order: 2; }
+  .phone {
+    background: var(--phone);
+    border-radius: 36px;
+    padding: 9px;
+    box-shadow: 0 18px 40px -18px rgba(27,26,23,.45);
+    max-width: 260px;
+    width: 100%;
+  }
+  .phone img { display: block; width: 100%; height: auto; border-radius: 28px; }
+  .shot h3 { font-size: 20px; margin: 0 0 8px; letter-spacing: -0.2px; }
+  .shot p { margin: 0 0 8px; }
+  @media (max-width: 640px) {
+    .shot, .shot:nth-child(even) { grid-template-columns: 1fr; justify-items: center; gap: 20px; }
+    .shot:nth-child(even) .phone { order: 0; }
+    .shot .text { width: 100%; }
+  }
+
+  .get { display:inline-block; background:#1b1a17; color:#fffaf0; text-decoration:none; font-weight:700; padding:14px 24px; border-radius:12px; margin:0 0 8px; }
+  .get:hover { opacity:.88 }
+  .get-note { font-size:14px; color:var(--ink-faint); margin:0 0 8px }
+  .fees { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 16px 20px; max-width: 65ch; }
+  .fees p:last-child { margin-bottom: 0; }
+  a { color: var(--accent); }
+  footer { margin-top: 56px; padding-top: 20px; border-top: 1px solid var(--line); font-size: 14px; color: var(--ink-faint); }
+  footer p { color: var(--ink-faint); }
+
+  /* orange brand background (all themes) */
+  :root, :root:not([data-theme="light"]), :root[data-theme="dark"], :root[data-theme="light"] {
+    --bg: #f2a93b;
+    --ink: #1b1a17;
+    --ink-soft: #2e2a20;
+    --ink-faint: #4a3410;
+    --surface: #fffaf0;
+    --line: rgba(27,26,23,.18);
+    --accent: #1b1a17;
+    --accent-bg: #fff1d6;
+  }
+
+  /* stripes + language switcher */
+  body { background: #f5b146 repeating-linear-gradient(135deg,#f5b146 0 90px,#f0a739 90px 180px); background-attachment: fixed; }
+  .topbar { display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; margin:0 0 28px; }
+  .topbar .brand { margin:0; }
+  .langs { display:flex; gap:6px; flex-wrap:wrap; }
+  .langs a { font-size:13px; font-weight:700; text-decoration:none; color:#1b1a17; background:rgba(255,250,240,.55); border:1px solid rgba(27,26,23,.18); border-radius:999px; padding:6px 12px; }
+  .langs a[aria-current="page"] { background:#1b1a17; color:#fff; }
+  body[dir] {}
+  html[dir="rtl"] body { font-family: Cairo, Roboto, "Segoe UI", Tahoma, Arial, sans-serif; }
+  html[dir="rtl"] ol, html[dir="rtl"] ul { padding-left:0; padding-right:22px; }
+  html[dir="rtl"] h1 { line-height:1.35; letter-spacing:0; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="topbar"><p class="brand">Last-Minute Jobs</p><nav class="langs" aria-label="Language"><a href="index.html" hreflang="en">EN</a><a href="index-es.html" hreflang="es">ES</a><a href="index-fr.html" hreflang="fr">FR</a><a href="index-nl.html" hreflang="nl" aria-current="page">NL</a><a href="index-ar.html" hreflang="ar">ع</a></nav></div>
+  <h1>Moet er vandaag iets gedaan worden? Iemand in de buurt kan het doen.</h1>
+  <p class="lead">Last-Minute Jobs is een mobiele app die mensen die op korte termijn een klus gedaan willen hebben, verbindt met mensen in de buurt die tijd hebben om het te doen. Het is een marktplaats: wij brengen beide kanten samen en regelen de betaling, en de tasker voert de klus uit.</p>
+
+  <p><a class="get" href="https://play.google.com/store/apps/details?id=com.lastminutejobs.app">Download op Google Play</a></p>
+  <p class="get-note">Nu beschikbaar op Android. De iPhone-versie komt binnenkort.</p>
+
+  <h2>Zo werkt het</h2>
+  <div class="shots">
+    <section class="shot">
+      <div class="phone"><img src="shots/map.jpg" alt="Vind klussen op de kaart" width="560" height="1157"></div>
+      <div class="text">
+        <h3>Vind klussen op de kaart</h3>
+        <p>Taskers zien open klussen om zich heen als pinnen op een kaart. Filters beperken het overzicht per categorie, zoals boodschappen, huisdierenzorg, verhuishulp, schoonmaken of loodgieterswerk. Tik op een kaart voor de prijs, de afstand en de details.</p>
+      </div>
+    </section>
+    <section class="shot">
+      <div class="phone"><img src="shots/list.jpg" alt="Of blader door de lijst" width="560" height="1157"></div>
+      <div class="text">
+        <h3>Of blader door de lijst</h3>
+        <p>Elke klus toont de prijs, de afstand, hoe lang het nog duurt voor hij verloopt en de beoordeling van de plaatser. Eén tik op <strong>Accepteren</strong> en de klus is van jou.</p>
+      </div>
+    </section>
+    <section class="shot">
+      <div class="phone"><img src="shots/post.jpg" alt="Plaats een klus in minder dan een minuut" width="560" height="1157"></div>
+      <div class="text">
+        <h3>Plaats een klus in minder dan een minuut</h3>
+        <p>Kies een snelle sjabloon of beschrijf wat je nodig hebt, kies een categorie en stel de prijs en de plek in. Vóór het plaatsen is een betaalmethode vereist, zodat een tasker weet dat de klus echt is.</p>
+      </div>
+    </section>
+    <section class="shot">
+      <div class="phone"><img src="shots/settings.jpg" alt="Bouw vertrouwen op met een profiel" width="560" height="1157"></div>
+      <div class="text">
+        <h3>Bouw vertrouwen op met een profiel</h3>
+        <p>Taskers kiezen hun vaardigheden, beschrijven hun kwalificaties en ervaring en kunnen hun identiteit verifiëren met een foto van hun ID. Kwalificaties worden getoond aan de mensen die hen inhuren en zijn gemarkeerd als door de tasker opgegeven.</p>
+      </div>
+    </section>
+  </div>
+
+  <h2>Hoe een klus verloopt</h2>
+  <ol>
+    <li><strong>Plaats.</strong> Beschrijf de taak, stel de prijs in en geef de locatie aan.</li>
+    <li><strong>Accepteer.</strong> Iemand in de buurt accepteert. Je ziet zijn of haar beoordeling en het aantal afgeronde klussen, en je kunt in de app berichten sturen.</li>
+    <li><strong>Voer de klus uit.</strong> De tasker gaat naar de plek en voert de taak uit.</li>
+    <li><strong>Betaling vrijgegeven.</strong> Zodra de klus als voltooid is gemarkeerd, wordt het geld aan de tasker vrijgegeven. Daarna beoordelen beide partijen elkaar.</li>
+  </ol>
+
+  <h2>Hoe de betaling werkt</h2>
+  <p>Betalingen worden verwerkt door Stripe. Zodra een tasker een klus accepteert, wordt het afgesproken bedrag vastgehouden op de kaart van de plaatser. Het wordt pas uitbetaald als de klus klaar is. Komt de tasker niet binnen een redelijke tijd opdagen, dan kan de plaatser annuleren en wordt het vastgehouden bedrag terugbetaald.</p>
+  <div class="fees">
+    <p><strong>Onze kosten:</strong> wie een klus plaatst, betaalt de prijs van de klus plus servicekosten van 12% (minimaal 2,50 in de valuta van de klus). De tasker betaalt 5% commissie over de prijs van de klus en houdt dus 95% over. De kosten worden in de app getoond voordat je een klus plaatst of accepteert. Bladeren en plaatsen is gratis.</p>
+  </div>
+
+  <h2>Terugbetalingen en geschillen</h2>
+  <p>Gaat er iets mis, dan kan elke partij in de app een geschil openen. Wij bekijken de berichten, foto's en tijdstempels van beide personen en kunnen de betaling terugbetalen, vrijgeven of splitsen zoals wij billijk achten. Annuleringsregels, waaronder late annuleringen en no-shows, worden in de app getoond voordat je bevestigt. De volledige voorwaarden staan in onze <a href="privacy-nl.html">Servicevoorwaarden</a>.</p>
+
+  <h2>Contact</h2>
+  <p>Vragen, terugbetalingen of hulp bij je account: <a href="mailto:elevengroupspain@gmail.com">elevengroupspain@gmail.com</a></p>
+
+  <footer>
+    <p><a href="privacy-nl.html">Privacybeleid en voorwaarden</a> &nbsp;·&nbsp; <a href="delete-account.html">Verwijder je account</a> &nbsp;·&nbsp; <a href="aviso-legal.html">Juridische kennisgeving</a> &nbsp;·&nbsp; <a href="cookies.html">Cookies</a></p>
+    <p>Last-Minute Jobs wordt onafhankelijk geëxploiteerd en is niet verbonden aan enig ander bedrijf, merk of app.</p>
+  </footer>
+</div>
+</body>
+</html>

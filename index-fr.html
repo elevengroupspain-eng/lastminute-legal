@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Last-Minute Jobs</title>
+<meta name="description" content="Last-Minute Jobs met en relation les personnes qui ont besoin d'une tâche réalisée maintenant avec quelqu'un de proche qui peut la faire. Publiez une mission, quelqu'un l'accepte et l'argent est bloqué en toute sécurité jusqu'à la fin de la mission.">
+<link rel="alternate" hreflang="en" href="https://lastminutejobs.app/"><link rel="alternate" hreflang="es" href="https://lastminutejobs.app/index-es.html"><link rel="alternate" hreflang="fr" href="https://lastminutejobs.app/index-fr.html"><link rel="alternate" hreflang="nl" href="https://lastminutejobs.app/index-nl.html"><link rel="alternate" hreflang="ar" href="https://lastminutejobs.app/index-ar.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1b1a17;
+    --ink-soft: #3d3a33;
+    --ink-faint: #746c5e;
+    --bg: #f7f5f0;
+    --surface: #ffffff;
+    --line: #e4dfd3;
+    --accent: #a8601f;
+    --accent-bg: #f6e6cf;
+    --phone: #1b1a17;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ink: #f1ede4;
+      --ink-soft: #d8d2c4;
+      --ink-faint: #a29a88;
+      --bg: #17160f;
+      --surface: #211f17;
+      --line: #38352a;
+      --accent: #e8a95a;
+      --accent-bg: #3a2c18;
+      --phone: #0b0b08;
+    }
+  }
+  :root[data-theme="dark"] {
+    --ink: #f1ede4;
+    --ink-soft: #d8d2c4;
+    --ink-faint: #a29a88;
+    --bg: #17160f;
+    --surface: #211f17;
+    --line: #38352a;
+    --accent: #e8a95a;
+    --accent-bg: #3a2c18;
+    --phone: #0b0b08;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: Roboto, -apple-system, "Segoe UI", Arial, sans-serif;
+    line-height: 1.55;
+    padding-inline: 16px;
+    padding-block: 40px 56px;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 880px; margin: 0 auto; }
+  .brand { font-weight: 700; letter-spacing: -0.2px; font-size: 18px; color: var(--accent); margin: 0 0 28px; }
+  h1 { font-size: clamp(30px, 6vw, 44px); line-height: 1.12; letter-spacing: -0.5px; margin: 0 0 14px; text-wrap: balance; max-width: 20ch; }
+  .lead { font-size: 18px; color: var(--ink-soft); margin: 0 0 24px; max-width: 60ch; }
+  h2 { font-size: 22px; margin: 56px 0 12px; letter-spacing: -0.2px; }
+  p { margin: 0 0 12px; max-width: 65ch; color: var(--ink-soft); }
+  ol, ul { margin: 0 0 12px; padding-left: 22px; color: var(--ink-soft); max-width: 65ch; }
+  li { margin-bottom: 8px; }
+
+  .shots { display: grid; grid-template-columns: 1fr; gap: 48px; margin-top: 32px; }
+  .shot { display: grid; grid-template-columns: minmax(0, 260px) minmax(0, 1fr); gap: 32px; align-items: center; }
+  .shot:nth-child(even) { grid-template-columns: minmax(0, 1fr) minmax(0, 260px); }
+  .shot:nth-child(even) .phone { order: 2; }
+  .phone {
+    background: var(--phone);
+    border-radius: 36px;
+    padding: 9px;
+    box-shadow: 0 18px 40px -18px rgba(27,26,23,.45);
+    max-width: 260px;
+    width: 100%;
+  }
+  .phone img { display: block; width: 100%; height: auto; border-radius: 28px; }
+  .shot h3 { font-size: 20px; margin: 0 0 8px; letter-spacing: -0.2px; }
+  .shot p { margin: 0 0 8px; }
+  @media (max-width: 640px) {
+    .shot, .shot:nth-child(even) { grid-template-columns: 1fr; justify-items: center; gap: 20px; }
+    .shot:nth-child(even) .phone { order: 0; }
+    .shot .text { width: 100%; }
+  }
+
+  .get { display:inline-block; background:#1b1a17; color:#fffaf0; text-decoration:none; font-weight:700; padding:14px 24px; border-radius:12px; margin:0 0 8px; }
+  .get:hover { opacity:.88 }
+  .get-note { font-size:14px; color:var(--ink-faint); margin:0 0 8px }
+  .fees { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 16px 20px; max-width: 65ch; }
+  .fees p:last-child { margin-bottom: 0; }
+  a { color: var(--accent); }
+  footer { margin-top: 56px; padding-top: 20px; border-top: 1px solid var(--line); font-size: 14px; color: var(--ink-faint); }
+  footer p { color: var(--ink-faint); }
+
+  /* orange brand background (all themes) */
+  :root, :root:not([data-theme="light"]), :root[data-theme="dark"], :root[data-theme="light"] {
+    --bg: #f2a93b;
+    --ink: #1b1a17;
+    --ink-soft: #2e2a20;
+    --ink-faint: #4a3410;
+    --surface: #fffaf0;
+    --line: rgba(27,26,23,.18);
+    --accent: #1b1a17;
+    --accent-bg: #fff1d6;
+  }
+
+  /* stripes + language switcher */
+  body { background: #f5b146 repeating-linear-gradient(135deg,#f5b146 0 90px,#f0a739 90px 180px); background-attachment: fixed; }
+  .topbar { display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; margin:0 0 28px; }
+  .topbar .brand { margin:0; }
+  .langs { display:flex; gap:6px; flex-wrap:wrap; }
+  .langs a { font-size:13px; font-weight:700; text-decoration:none; color:#1b1a17; background:rgba(255,250,240,.55); border:1px solid rgba(27,26,23,.18); border-radius:999px; padding:6px 12px; }
+  .langs a[aria-current="page"] { background:#1b1a17; color:#fff; }
+  body[dir] {}
+  html[dir="rtl"] body { font-family: Cairo, Roboto, "Segoe UI", Tahoma, Arial, sans-serif; }
+  html[dir="rtl"] ol, html[dir="rtl"] ul { padding-left:0; padding-right:22px; }
+  html[dir="rtl"] h1 { line-height:1.35; letter-spacing:0; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="topbar"><p class="brand">Last-Minute Jobs</p><nav class="langs" aria-label="Language"><a href="index.html" hreflang="en">EN</a><a href="index-es.html" hreflang="es">ES</a><a href="index-fr.html" hreflang="fr" aria-current="page">FR</a><a href="index-nl.html" hreflang="nl">NL</a><a href="index-ar.html" hreflang="ar">ع</a></nav></div>
+  <h1>Besoin d'un coup de main aujourd'hui ? Quelqu'un près de chez vous peut s'en charger.</h1>
+  <p class="lead">Last-Minute Jobs est une application mobile qui met en relation des personnes qui ont besoin d'une tâche réalisée dans l'urgence avec des personnes proches, disponibles pour la faire. C'est une place de marché : nous mettons les deux parties en relation et gérons le paiement, et le tasker réalise la mission.</p>
+
+  <p><a class="get" href="https://play.google.com/store/apps/details?id=com.lastminutejobs.app">Disponible sur Google Play</a></p>
+  <p class="get-note">Disponible dès maintenant sur Android. La version iPhone arrive bientôt.</p>
+
+  <h2>Découvrez comment ça marche</h2>
+  <div class="shots">
+    <section class="shot">
+      <div class="phone"><img src="shots/map.jpg" alt="Trouvez des missions sur la carte" width="560" height="1157"></div>
+      <div class="text">
+        <h3>Trouvez des missions sur la carte</h3>
+        <p>Les taskers voient les missions ouvertes autour d'eux sous forme de repères sur une carte. Des filtres affinent l'affichage par catégorie : courses, garde d'animaux, aide au déménagement, ménage ou plomberie. Touchez une carte pour voir le prix, la distance et les détails.</p>
+      </div>
+    </section>
+    <section class="shot">
+      <div class="phone"><img src="shots/list.jpg" alt="Ou parcourez la liste" width="560" height="1157"></div>
+      <div class="text">
+        <h3>Ou parcourez la liste</h3>
+        <p>Chaque mission indique le prix, la distance, le temps restant avant expiration et la note de la personne qui l'a publiée. Un appui sur <strong>Accepter</strong> et la mission est à vous.</p>
+      </div>
+    </section>
+    <section class="shot">
+      <div class="phone"><img src="shots/post.jpg" alt="Publiez une mission en moins d'une minute" width="560" height="1157"></div>
+      <div class="text">
+        <h3>Publiez une mission en moins d'une minute</h3>
+        <p>Choisissez un modèle rapide ou décrivez votre besoin, choisissez une catégorie et fixez le prix et le lieu. Un moyen de paiement est requis avant de publier, afin que le tasker sache que la mission est réelle.</p>
+      </div>
+    </section>
+    <section class="shot">
+      <div class="phone"><img src="shots/settings.jpg" alt="Inspirez confiance avec un profil" width="560" height="1157"></div>
+      <div class="text">
+        <h3>Inspirez confiance avec un profil</h3>
+        <p>Les taskers choisissent leurs compétences, décrivent leurs qualifications et leur expérience, et peuvent vérifier leur identité avec une photo de pièce d'identité. Les qualifications sont visibles par les personnes qui les engagent et sont indiquées comme fournies par le tasker.</p>
+      </div>
+    </section>
+  </div>
+
+  <h2>Le déroulement d'une mission</h2>
+  <ol>
+    <li><strong>Publiez.</strong> Décrivez la tâche, fixez le prix et indiquez le lieu.</li>
+    <li><strong>Acceptation.</strong> Quelqu'un près de vous accepte. Vous voyez sa note et les missions qu'il a terminées, et vous pouvez lui écrire dans l'application.</li>
+    <li><strong>Réalisation.</strong> Le tasker se rend sur place et effectue la tâche.</li>
+    <li><strong>Paiement libéré.</strong> Quand la mission est marquée comme terminée, l'argent est versé au tasker. Les deux parties se notent ensuite.</li>
+  </ol>
+
+  <h2>Comment fonctionne le paiement</h2>
+  <p>Les paiements sont traités par Stripe. Lorsqu'un tasker accepte une mission, le montant convenu est bloqué sur la carte de la personne qui a publié la mission. Il n'est versé qu'une fois la mission terminée. Si le tasker ne se présente pas dans un délai raisonnable, la personne peut annuler et le montant bloqué est remboursé.</p>
+  <div class="fees">
+    <p><strong>Nos frais :</strong> la personne qui publie une mission paie le prix de la mission plus des frais de service de 12 % (minimum 2,50 dans la devise de la mission). Le tasker paie une commission de 5 % sur le prix de la mission et conserve donc 95 %. Les frais sont affichés dans l'application avant de publier ou d'accepter une mission. Parcourir et publier sont gratuits.</p>
+  </div>
+
+  <h2>Remboursements et litiges</h2>
+  <p>En cas de problème, chacune des parties peut ouvrir un litige dans l'application. Nous examinons les messages, les photos et les horodatages des deux personnes et pouvons rembourser, libérer ou partager le paiement selon ce que nous jugeons équitable. Les règles d'annulation, y compris les annulations tardives et les absences, sont affichées dans l'application avant que vous ne confirmiez. Les détails complets figurent dans nos <a href="privacy-fr.html">Conditions d'utilisation</a>.</p>
+
+  <h2>Contact</h2>
+  <p>Questions, remboursements ou aide pour votre compte : <a href="mailto:elevengroupspain@gmail.com">elevengroupspain@gmail.com</a></p>
+
+  <footer>
+    <p><a href="privacy-fr.html">Politique de confidentialité et conditions</a> &nbsp;·&nbsp; <a href="delete-account.html">Supprimer votre compte</a> &nbsp;·&nbsp; <a href="aviso-legal.html">Mentions légales</a> &nbsp;·&nbsp; <a href="cookies.html">Cookies</a></p>
+    <p>Last-Minute Jobs est exploitée de manière indépendante et n'est affiliée à aucune autre entreprise, marque ou application.</p>
+  </footer>
+</div>
+</body>
+</html>
