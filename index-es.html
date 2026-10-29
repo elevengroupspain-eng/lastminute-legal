@@ -118,6 +118,10 @@
   html[dir="rtl"] body { font-family: Cairo, Roboto, "Segoe UI", Tahoma, Arial, sans-serif; }
   html[dir="rtl"] ol, html[dir="rtl"] ul { padding-left:0; padding-right:22px; }
   html[dir="rtl"] h1 { line-height:1.35; letter-spacing:0; }
+  .who { display:flex; gap:10px; flex-wrap:wrap; margin:0 0 16px; }
+  .pill { display:inline-block; font-weight:700; text-decoration:none; color:#1b1a17; background:#fffaf0; border:2px solid #1b1a17; border-radius:12px; padding:12px 18px; }
+  .pill:hover { background:#1b1a17; color:#fffaf0; }
+  html { scroll-behavior:smooth; } h2[id] { scroll-margin-top:16px; }
 </style>
 </head>
 <body>
@@ -126,6 +130,7 @@
   <h1>¿Necesitas algo hoy? Alguien cerca de ti puede hacerlo.</h1>
   <p class="lead">Last-Minute Jobs es una aplicación móvil que conecta a personas que necesitan hacer una tarea con poca antelación con personas cercanas que están libres para hacerla. Es un marketplace: presentamos a las dos partes y gestionamos el pago, y quien realiza la tarea (el tasker) hace el trabajo.</p>
 
+  <p class="who"><a class="pill" href="#posters">Necesito que me hagan algo</a><a class="pill" href="#taskers">Quiero ganar dinero como tasker</a></p>
   <p><a class="get" href="https://play.google.com/store/apps/details?id=com.lastminutejobs.app">Consíguela en Google Play</a></p>
   <p class="get-note">Disponible ahora en Android. La versión para iPhone llegará pronto.</p>
 
@@ -161,13 +166,24 @@
     </section>
   </div>
 
-  <h2>Cómo va un trabajo</h2>
+  <h2 id="posters">Cómo va un trabajo</h2>
   <ol>
     <li><strong>Publica.</strong> Describe la tarea, fija el precio y marca el lugar.</li>
     <li><strong>Acepta.</strong> Alguien cercano acepta. Puedes ver su valoración y los trabajos que ha completado, y escribirle en la app.</li>
     <li><strong>Haz el trabajo.</strong> El tasker va al lugar y realiza la tarea.</li>
     <li><strong>Se libera el pago.</strong> Cuando el trabajo se marca como completado, el dinero se libera al tasker. Después, ambas partes se valoran.</li>
   </ol>
+
+  <h2 id="taskers">Para taskers: gana dinero con tu propio horario</h2>
+  <p>Last-Minute Jobs te permite aceptar trabajos cercanos cuando estás libre. Así funciona para ti:</p>
+  <ol>
+    <li><strong>Crea tu perfil.</strong> Descarga la app, elige tus habilidades y describe tus cualificaciones y experiencia.</li>
+    <li><strong>Verifica tu identidad.</strong> Puedes añadir una foto de tu documento para que vean que tu perfil está verificado.</li>
+    <li><strong>Configura tu cobro.</strong> Los pagos los gestiona Stripe para que el dinero te llegue.</li>
+    <li><strong>Elige un trabajo.</strong> Abre el mapa o la lista, elige un trabajo cerca de ti y toca <strong>Aceptar</strong>.</li>
+    <li><strong>Hazlo y cobra.</strong> Cuando el trabajo se marca como completado, el dinero se libera para ti. Te quedas con el 95 % del precio (cobramos una comisión del 5 %).</li>
+  </ol>
+  <p><a class="get" href="https://play.google.com/store/apps/details?id=com.lastminutejobs.app">Descarga la app y empieza a ganar</a></p>
 
   <h2>Cómo funciona el pago</h2>
   <p>Los pagos los procesa Stripe. Cuando un tasker acepta un trabajo, el importe acordado se retiene en la tarjeta de quien lo publicó. No se paga hasta que el trabajo está hecho. Si el tasker no llega en un plazo razonable, quien publicó puede cancelar y se le reembolsa el importe retenido.</p>

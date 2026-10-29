@@ -118,6 +118,10 @@
   html[dir="rtl"] body { font-family: Cairo, Roboto, "Segoe UI", Tahoma, Arial, sans-serif; }
   html[dir="rtl"] ol, html[dir="rtl"] ul { padding-left:0; padding-right:22px; }
   html[dir="rtl"] h1 { line-height:1.35; letter-spacing:0; }
+  .who { display:flex; gap:10px; flex-wrap:wrap; margin:0 0 16px; }
+  .pill { display:inline-block; font-weight:700; text-decoration:none; color:#1b1a17; background:#fffaf0; border:2px solid #1b1a17; border-radius:12px; padding:12px 18px; }
+  .pill:hover { background:#1b1a17; color:#fffaf0; }
+  html { scroll-behavior:smooth; } h2[id] { scroll-margin-top:16px; }
 </style>
 </head>
 <body>
@@ -126,6 +130,7 @@
   <h1>Moet er vandaag iets gedaan worden? Iemand in de buurt kan het doen.</h1>
   <p class="lead">Last-Minute Jobs is een mobiele app die mensen die op korte termijn een klus gedaan willen hebben, verbindt met mensen in de buurt die tijd hebben om het te doen. Het is een marktplaats: wij brengen beide kanten samen en regelen de betaling, en de tasker voert de klus uit.</p>
 
+  <p class="who"><a class="pill" href="#posters">Ik wil een klus laten doen</a><a class="pill" href="#taskers">Ik wil verdienen als tasker</a></p>
   <p><a class="get" href="https://play.google.com/store/apps/details?id=com.lastminutejobs.app">Download op Google Play</a></p>
   <p class="get-note">Nu beschikbaar op Android. De iPhone-versie komt binnenkort.</p>
 
@@ -161,13 +166,24 @@
     </section>
   </div>
 
-  <h2>Hoe een klus verloopt</h2>
+  <h2 id="posters">Hoe een klus verloopt</h2>
   <ol>
     <li><strong>Plaats.</strong> Beschrijf de taak, stel de prijs in en geef de locatie aan.</li>
     <li><strong>Accepteer.</strong> Iemand in de buurt accepteert. Je ziet zijn of haar beoordeling en het aantal afgeronde klussen, en je kunt in de app berichten sturen.</li>
     <li><strong>Voer de klus uit.</strong> De tasker gaat naar de plek en voert de taak uit.</li>
     <li><strong>Betaling vrijgegeven.</strong> Zodra de klus als voltooid is gemarkeerd, wordt het geld aan de tasker vrijgegeven. Daarna beoordelen beide partijen elkaar.</li>
   </ol>
+
+  <h2 id="taskers">Voor taskers: verdien op je eigen tijd</h2>
+  <p>Met Last-Minute Jobs pak je klussen in de buurt op wanneer jij tijd hebt. Zo werkt het voor jou:</p>
+  <ol>
+    <li><strong>Maak je profiel.</strong> Download de app, kies je vaardigheden en beschrijf je kwalificaties en ervaring.</li>
+    <li><strong>Verifieer je identiteit.</strong> Je kunt een foto van je ID toevoegen zodat mensen zien dat je profiel geverifieerd is.</li>
+    <li><strong>Stel je uitbetaling in.</strong> Betalingen worden door Stripe afgehandeld, zodat het geld bij jou aankomt.</li>
+    <li><strong>Kies een klus.</strong> Open de kaart of de lijst, kies een klus bij jou in de buurt en tik op <strong>Accepteren</strong>.</li>
+    <li><strong>Doe het en word betaald.</strong> Zodra de klus als voltooid is gemarkeerd, wordt het geld aan jou vrijgegeven. Je houdt 95% van de prijs (wij rekenen 5% commissie).</li>
+  </ol>
+  <p><a class="get" href="https://play.google.com/store/apps/details?id=com.lastminutejobs.app">Download de app en begin met verdienen</a></p>
 
   <h2>Hoe de betaling werkt</h2>
   <p>Betalingen worden verwerkt door Stripe. Zodra een tasker een klus accepteert, wordt het afgesproken bedrag vastgehouden op de kaart van de plaatser. Het wordt pas uitbetaald als de klus klaar is. Komt de tasker niet binnen een redelijke tijd opdagen, dan kan de plaatser annuleren en wordt het vastgehouden bedrag terugbetaald.</p>

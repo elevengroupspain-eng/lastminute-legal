@@ -118,6 +118,10 @@
   html[dir="rtl"] body { font-family: Cairo, Roboto, "Segoe UI", Tahoma, Arial, sans-serif; }
   html[dir="rtl"] ol, html[dir="rtl"] ul { padding-left:0; padding-right:22px; }
   html[dir="rtl"] h1 { line-height:1.35; letter-spacing:0; }
+  .who { display:flex; gap:10px; flex-wrap:wrap; margin:0 0 16px; }
+  .pill { display:inline-block; font-weight:700; text-decoration:none; color:#1b1a17; background:#fffaf0; border:2px solid #1b1a17; border-radius:12px; padding:12px 18px; }
+  .pill:hover { background:#1b1a17; color:#fffaf0; }
+  html { scroll-behavior:smooth; } h2[id] { scroll-margin-top:16px; }
 </style>
 </head>
 <body>
@@ -126,6 +130,7 @@
   <h1>تحتاج إنجاز شيء اليوم؟ شخص قريب منك يمكنه القيام بذلك.</h1>
   <p class="lead">Last-Minute Jobs تطبيق للجوال يربط بين الأشخاص الذين يحتاجون إلى إنجاز مهمة في وقت قصير وأشخاص قريبين منهم متفرغين لتنفيذها. هو سوق إلكتروني: نحن نعرّف الطرفين ببعضهما ونتولى الدفع، ويقوم المنفّذ (التاسكر) بالعمل.</p>
 
+  <p class="who"><a class="pill" href="#posters">أحتاج من ينجز لي مهمة</a><a class="pill" href="#taskers">أريد أن أكسب كمنفّذ</a></p>
   <p><a class="get" href="https://play.google.com/store/apps/details?id=com.lastminutejobs.app">حمّله من Google Play</a></p>
   <p class="get-note">متاح الآن على أندرويد. نسخة آيفون قريبًا.</p>
 
@@ -161,13 +166,24 @@
     </section>
   </div>
 
-  <h2>كيف تسير المهمة</h2>
+  <h2 id="posters">كيف تسير المهمة</h2>
   <ol>
     <li><strong>انشر.</strong> صف المهمة وحدّد السعر والموقع.</li>
     <li><strong>قبول.</strong> يقبل شخص قريب منك. يمكنك رؤية تقييمه والمهام التي أنجزها، ومراسلته داخل التطبيق.</li>
     <li><strong>نفّذ المهمة.</strong> يذهب المنفّذ إلى المكان وينجز المهمة.</li>
     <li><strong>يُحرَّر الدفع.</strong> عند وضع علامة اكتمال على المهمة، يُحرَّر المال للمنفّذ. ثم يقيّم الطرفان بعضهما.</li>
   </ol>
+
+  <h2 id="taskers">للمنفّذين: اكسب في الوقت الذي يناسبك</h2>
+  <p>يتيح لك Last-Minute Jobs قبول مهام قريبة منك عندما تكون متفرغًا. هكذا يعمل بالنسبة لك:</p>
+  <ol>
+    <li><strong>أنشئ ملفك الشخصي.</strong> حمّل التطبيق واختر مهاراتك وصف مؤهلاتك وخبرتك.</li>
+    <li><strong>وثّق هويتك.</strong> يمكنك إضافة صورة بطاقة الهوية ليرى الناس أن ملفك موثّق.</li>
+    <li><strong>جهّز استلام أموالك.</strong> تتولى Stripe معالجة المدفوعات ليصلك المال.</li>
+    <li><strong>اختر مهمة.</strong> افتح الخريطة أو القائمة واختر مهمة قريبة منك واضغط <strong>قبول</strong>.</li>
+    <li><strong>نفّذها واقبض.</strong> عند وضع علامة اكتمال على المهمة يُحرَّر المال لك. تحتفظ بـ 95% من السعر (نأخذ عمولة 5%).</li>
+  </ol>
+  <p><a class="get" href="https://play.google.com/store/apps/details?id=com.lastminutejobs.app">حمّل التطبيق وابدأ الكسب</a></p>
 
   <h2>كيف يعمل الدفع</h2>
   <p>تتم معالجة المدفوعات عبر Stripe. عندما يقبل المنفّذ مهمة، يُحجز المبلغ المتفق عليه على بطاقة صاحب الطلب. ولا يُدفع إلا بعد إنجاز المهمة. إذا لم يحضر المنفّذ خلال وقت معقول، يمكن لصاحب الطلب الإلغاء ويُردّ المبلغ المحجوز.</p>

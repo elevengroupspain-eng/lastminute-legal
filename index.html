@@ -118,6 +118,10 @@
   html[dir="rtl"] body { font-family: Cairo, Roboto, "Segoe UI", Tahoma, Arial, sans-serif; }
   html[dir="rtl"] ol, html[dir="rtl"] ul { padding-left:0; padding-right:22px; }
   html[dir="rtl"] h1 { line-height:1.35; letter-spacing:0; }
+  .who { display:flex; gap:10px; flex-wrap:wrap; margin:0 0 16px; }
+  .pill { display:inline-block; font-weight:700; text-decoration:none; color:#1b1a17; background:#fffaf0; border:2px solid #1b1a17; border-radius:12px; padding:12px 18px; }
+  .pill:hover { background:#1b1a17; color:#fffaf0; }
+  html { scroll-behavior:smooth; } h2[id] { scroll-margin-top:16px; }
 </style>
 </head>
 <body>
@@ -126,6 +130,7 @@
   <h1>Need something done today? Someone nearby can do it.</h1>
   <p class="lead">Last-Minute Jobs is a mobile app that connects people who need a task done at short notice with people nearby who are free to do it. It is a marketplace: we introduce the two sides and handle the payment, and the tasker does the job.</p>
 
+  <p class="who"><a class="pill" href="#posters">I need a job done</a><a class="pill" href="#taskers">I want to earn as a tasker</a></p>
   <p><a class="get" href="https://play.google.com/store/apps/details?id=com.lastminutejobs.app">Get it on Google Play</a></p>
   <p class="get-note">Available now on Android. iPhone version coming soon.</p>
 
@@ -161,13 +166,24 @@
     </section>
   </div>
 
-  <h2>How a job goes</h2>
+  <h2 id="posters">How a job goes</h2>
   <ol>
     <li><strong>Post.</strong> Describe the task, set the price and pin the location.</li>
     <li><strong>Accept.</strong> Someone nearby accepts. You can see their rating and the jobs they have completed, and you can message them in the app.</li>
     <li><strong>Do the job.</strong> The tasker goes to the place and does the task.</li>
     <li><strong>Payment is released.</strong> When the job is marked complete, the money is released to the tasker. Both sides then rate each other.</li>
   </ol>
+
+  <h2 id="taskers">For taskers: earn on your own schedule</h2>
+  <p>Last-Minute Jobs lets you pick up nearby jobs when you are free. Here is how it works for you:</p>
+  <ol>
+    <li><strong>Create your profile.</strong> Download the app, choose your skills and describe your qualifications and experience.</li>
+    <li><strong>Verify your identity.</strong> You can add an ID photo so people see that your profile is verified.</li>
+    <li><strong>Set up your payout.</strong> Payments are handled by Stripe, so the money can reach you.</li>
+    <li><strong>Pick a job.</strong> Open the map or the list, choose a job near you and tap <strong>Accept</strong>.</li>
+    <li><strong>Do it and get paid.</strong> When the job is marked complete, the money is released to you. You keep 95% of the job price (we take a 5% commission).</li>
+  </ol>
+  <p><a class="get" href="https://play.google.com/store/apps/details?id=com.lastminutejobs.app">Get the app and start earning</a></p>
 
   <h2>How payment works</h2>
   <p>Payments are processed by Stripe. When a tasker accepts a job, the agreed amount is held on the poster's card. It is not paid out until the job is done. If the tasker does not arrive within a reasonable time, the poster can cancel and the held amount is refunded.</p>
