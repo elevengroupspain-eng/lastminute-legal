@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About Last-Minute Jobs</title>
+<meta name="description" content="Last-Minute Jobs is built and operated by VAELEVEN, S.L. in Estepona, Spain. Who we are, how the app works and how to reach us.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1b1a17;
+    --ink-soft: #3d3a33;
+    --ink-faint: #746c5e;
+    --bg: #f7f5f0;
+    --surface: #ffffff;
+    --line: #e4dfd3;
+    --accent: #a8601f;
+    --accent-bg: #f6e6cf;
+    --phone: #1b1a17;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ink: #f1ede4;
+      --ink-soft: #d8d2c4;
+      --ink-faint: #a29a88;
+      --bg: #17160f;
+      --surface: #211f17;
+      --line: #38352a;
+      --accent: #e8a95a;
+      --accent-bg: #3a2c18;
+      --phone: #0b0b08;
+    }
+  }
+  :root[data-theme="dark"] {
+    --ink: #f1ede4;
+    --ink-soft: #d8d2c4;
+    --ink-faint: #a29a88;
+    --bg: #17160f;
+    --surface: #211f17;
+    --line: #38352a;
+    --accent: #e8a95a;
+    --accent-bg: #3a2c18;
+    --phone: #0b0b08;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: Roboto, -apple-system, "Segoe UI", Arial, sans-serif;
+    line-height: 1.55;
+    padding-inline: 16px;
+    padding-block: 40px 56px;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 880px; margin: 0 auto; }
+  .brand { font-weight: 700; letter-spacing: -0.2px; font-size: 18px; color: var(--accent); margin: 0 0 28px; }
+  h1 { font-size: clamp(30px, 6vw, 44px); line-height: 1.12; letter-spacing: -0.5px; margin: 0 0 14px; text-wrap: balance; max-width: 20ch; }
+  .lead { font-size: 18px; color: var(--ink-soft); margin: 0 0 24px; max-width: 60ch; }
+  h2 { font-size: 22px; margin: 56px 0 12px; letter-spacing: -0.2px; }
+  p { margin: 0 0 12px; max-width: 65ch; color: var(--ink-soft); }
+  ol, ul { margin: 0 0 12px; padding-left: 22px; color: var(--ink-soft); max-width: 65ch; }
+  li { margin-bottom: 8px; }
+
+  .shots { display: grid; grid-template-columns: 1fr; gap: 48px; margin-top: 32px; }
+  .shot { display: grid; grid-template-columns: minmax(0, 260px) minmax(0, 1fr); gap: 32px; align-items: center; }
+  .shot:nth-child(even) { grid-template-columns: minmax(0, 1fr) minmax(0, 260px); }
+  .shot:nth-child(even) .phone { order: 2; }
+  .phone {
+    background: var(--phone);
+    border-radius: 36px;
+    padding: 9px;
+    box-shadow: 0 18px 40px -18px rgba(27,26,23,.45);
+    max-width: 260px;
+    width: 100%;
+  }
+  .phone img { display: block; width: 100%; height: auto; border-radius: 28px; }
+  .shot h3 { font-size: 20px; margin: 0 0 8px; letter-spacing: -0.2px; }
+  .shot p { margin: 0 0 8px; }
+  @media (max-width: 640px) {
+    .shot, .shot:nth-child(even) { grid-template-columns: 1fr; justify-items: center; gap: 20px; }
+    .shot:nth-child(even) .phone { order: 0; }
+    .shot .text { width: 100%; }
+  }
+
+  .get { display:inline-block; background:#1b1a17; color:#fffaf0; text-decoration:none; font-weight:700; padding:14px 24px; border-radius:12px; margin:0 0 8px; }
+  .get:hover { opacity:.88 }
+  .get-note { font-size:14px; color:var(--ink-faint); margin:0 0 8px }
+  .fees { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 16px 20px; max-width: 65ch; }
+  .fees p:last-child { margin-bottom: 0; }
+  a { color: var(--accent); }
+  footer { margin-top: 56px; padding-top: 20px; border-top: 1px solid var(--line); font-size: 14px; color: var(--ink-faint); }
+  footer p { color: var(--ink-faint); }
+
+  /* orange brand background (all themes) */
+  :root, :root:not([data-theme="light"]), :root[data-theme="dark"], :root[data-theme="light"] {
+    --bg: #f2a93b;
+    --ink: #1b1a17;
+    --ink-soft: #2e2a20;
+    --ink-faint: #4a3410;
+    --surface: #fffaf0;
+    --line: rgba(27,26,23,.18);
+    --accent: #1b1a17;
+    --accent-bg: #fff1d6;
+  }
+
+  /* stripes + language switcher */
+  body { background: #f5b146 repeating-linear-gradient(135deg,#f5b146 0 90px,#f0a739 90px 180px); background-attachment: fixed; }
+  .topbar { display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; margin:0 0 28px; }
+  .topbar .brand { margin:0; }
+  .langs { display:flex; gap:6px; flex-wrap:wrap; }
+  .langs a { font-size:13px; font-weight:700; text-decoration:none; color:#1b1a17; background:rgba(255,250,240,.55); border:1px solid rgba(27,26,23,.18); border-radius:999px; padding:6px 12px; }
+  .langs a[aria-current="page"] { background:#1b1a17; color:#fff; }
+  body[dir] {}
+  html[dir="rtl"] body { font-family: Cairo, Roboto, "Segoe UI", Tahoma, Arial, sans-serif; }
+  html[dir="rtl"] ol, html[dir="rtl"] ul { padding-left:0; padding-right:22px; }
+  html[dir="rtl"] h1 { line-height:1.35; letter-spacing:0; }
+  .who { display:flex; gap:10px; flex-wrap:wrap; margin:0 0 16px; }
+  .pill { display:inline-block; font-weight:700; text-decoration:none; color:#1b1a17; background:#fffaf0; border:2px solid #1b1a17; border-radius:12px; padding:12px 18px; }
+  .pill:hover { background:#1b1a17; color:#fffaf0; }
+  html { scroll-behavior:smooth; } h2[id] { scroll-margin-top:16px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="topbar"><p class="brand">Last-Minute Jobs</p><nav class="langs" aria-label="Navigation"><a href="index.html">Home</a><a href="about.html" aria-current="page">About</a></nav></div>
+  <h1>Built in Estepona, for neighbours who need a hand today.</h1>
+  <p class="lead">Last-Minute Jobs is made and run by VAELEVEN, S.L., a company based in Estepona, Costa del Sol, Spain.</p>
+
+  <h2>Why we built it</h2>
+  <p>Small jobs come up at the worst time: a delivery to collect, a flat to clean before guests arrive, furniture to move, a pet to look after. Finding someone reliable usually means group chats and waiting.</p>
+  <p>At the same time, many people nearby have a free hour and would like to earn. We built Last-Minute Jobs to connect the two quickly and fairly, starting in our own area.</p>
+
+  <h2>How it keeps people safe</h2>
+  <ul>
+    <li>Payment is held securely and only released when the job is done. Card payments are handled by Stripe; we never see or store card numbers.</li>
+    <li>Taskers can verify their identity, and profiles show ratings and completed jobs.</li>
+    <li>Posters can approve who comes: Taskers ask to do a job and the poster chooses. Child care jobs always need approval.</li>
+    <li>Both sides can report a problem from inside the app.</li>
+  </ul>
+
+  <h2>The app</h2>
+  <div class="shots">
+    <section class="shot">
+      <div class="phone"><img src="shots/map.jpg" alt="Find jobs on the map" width="560" height="1157"></div>
+      <div class="text"><h3>Find work nearby</h3><p>See open jobs on a map or in a list and ask to take the ones that suit you.</p></div>
+    </section>
+    <section class="shot">
+      <div class="phone"><img src="shots/post.jpg" alt="Post a job in under a minute" width="560" height="1157"></div>
+      <div class="text"><h3>Post a job in a minute</h3><p>Say what you need, when and how much. Nearby Taskers are notified.</p></div>
+    </section>
+  </div>
+
+  <h2>Contact</h2>
+  <p>Questions, feedback or a problem with a job? Write to us and we reply within a few working days.</p>
+  <p><a href="mailto:elevengroupspain@gmail.com">elevengroupspain@gmail.com</a></p>
+  <p>VAELEVEN, S.L. · Estepona, Málaga, Spain. Company details are in the <a href="aviso-legal.html">legal notice</a>.</p>
+  <p><a class="get" href="https://play.google.com/store/apps/details?id=com.lastminutejobs.app&referrer=utm_source%3Dwebsite%26utm_medium%3Dabout%26utm_campaign%3Den">Get it on Google Play</a></p>
+
+  <footer>
+    <p><a href="privacy.html">Privacy Policy &amp; Terms of Service</a> &nbsp;·&nbsp; <a href="delete-account.html">Delete your account</a> &nbsp;·&nbsp; <a href="aviso-legal.html">Legal notice</a> &nbsp;·&nbsp; <a href="cookies.html">Cookies</a></p>
+  </footer>
+</div>
+</body>
+</html>
